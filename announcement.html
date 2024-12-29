@@ -6,11 +6,166 @@
   <title>Sisea Care GH - Event Announcement</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+ 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+AU+VIC+Guides&family=Unlock&display=swap" rel="stylesheet">
+
+  // <uniquifier>: Use a unique and descriptive class name
+    // <weight>: Use a value from 200 to 800
+    
+    .karla-<uniquifier> {
+      font-family: "Karla", serif;
+      font-optical-sizing: auto;
+      font-weight: <weight>;
+      font-style: normal;
+    }
+
+  <style>
+    .underline-custom {
+        position: relative;
+        display: inline-block;
+        padding-bottom: 5px; /* Adjust padding to position underline */
+    }
+    
+    .underline-custom::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 4px; /* Adjust underline thickness */
+        background: linear-gradient(to right, #FFD700, #FF8C00); /* Gradient colors */
+        border-radius: 2px; /* Smooth edges */
+        transform: scaleX(0); /* Start with no underline */
+        transform-origin: right;
+        transition: transform 0.4s ease;
+    }
+    
+    .underline-custom:hover::after {
+        transform: scaleX(1); /* Full underline on hover */
+        transform-origin: left;
+    }
+    </style>
+    
+
+  <style>
+    /* Your in-page CSS */
+    .playwrite-au-vic-guides-regular {
+        font-family: "Playwrite AU VIC Guides", serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+</style>
+
+<style>
+.unlock-regular {
+font-family: "Unlock", serif;
+font-weight: 400;
+font-style: normal;
+}
+</style>
+
+  <style>
+    /* Slide In */
+    .slide-in {
+        animation: slideIn 1.5s ease-out forwards;
+    }
+    @keyframes slideIn {
+        from {
+            transform: translateY(-50px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    /* Slide Out */
+    .slide-out {
+        animation: slideOut 1.5s ease-in forwards;
+    }
+    @keyframes slideOut {
+        from {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        to {
+            transform: translateY(-50px);
+            opacity: 0;
+        }
+    }
+</style>
+
+      
+  <style>
+
+      /* Animations */
+      .fade-in {
+          animation: fadeIn 2s ease-in-out;
+      }
+      @keyframes fadeIn {
+          from {
+              opacity: 0;
+          }
+          to {
+              opacity: 1;
+          }
+      }
+
+      .slide-in {
+          animation: slideIn 1.5s ease-out;
+      }
+      @keyframes slideIn {
+          from {
+              transform: translateY(-50px);
+              opacity: 0;
+          }
+          to {
+              transform: translateY(0);
+              opacity: 1;
+          }
+      }
+
+      .pulse {
+          animation: pulse 2s infinite;
+      }
+      @keyframes pulse {
+          0%, 100% {
+              transform: scale(1);
+          }
+          50% {
+              transform: scale(1.1);
+          }
+      }
+  </style>
+
+<style>
+  /* Custom styles for carousel navigation */
+  .carousel-button {
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+  }
+  .carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+</style>
+
+
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+defer
+></script>
+
 </head>
 <body class="bg-gray-100 text-gray-800 bg-[url(https://images.unsplash.com/photo-1642444616393-df04dcb1492c?q=80&w=1414&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] ">
   <!-- Header -->
   <header class="bg-blue-600 text-white py-6">
-    <div class="container mx-auto px-4 text-center">
+    <div class="container mx-auto px-4 text-center"> 
       <h1 class="text-3xl font-bold">Sisea Care GH</h1>
       <p class="mt-2 text-lg">Event Announcement</p>
     </div>
@@ -19,8 +174,8 @@
   <!-- Main Content -->
   <main class="container mx-auto px-4 py-8">
     <!-- Event Details -->
-    <section class="bg-white shadow-md rounded-lg p-6 mb-8">
-      <h2 class="text-2xl font-bold mb-4">🎮 Rep Your Jersey Night & Gala Games 🎉</h2>
+    <section class="bg-white shadow-md rounded-lg p-6 mb-8 slide-in">
+      <h2 class="text-2xl font-bold mb-4 unlock-regular " >🎮 Rep Your Jersey Night & Gala Games 🎉</h2>
       <p class="text-lg mb-4">
         Join us for an exciting two-day event filled with fun and games!
       </p>
@@ -31,7 +186,7 @@
     </section>
 
     <!-- Event Location -->
-    <section class="bg-white shadow-md rounded-lg p-6 mb-8">
+    <section class="bg-white shadow-md rounded-lg p-6 mb-8 slide-in">
       <h3 class="text-xl font-bold mb-2">📍 Location</h3>
       <p class="text-lg flex items-center">
         <i class="fas fa-map-marker-alt text-red-500 mr-2"></i>
@@ -40,23 +195,23 @@
     </section>
 
     <!-- Picture Placeholder -->
-    <section class="bg-white shadow-md rounded-lg p-6 mb-8">
-      <h3 class="text-xl font-bold mb-4">Event Highlights</h3>
+    <section class="bg-white shadow-md rounded-lg p-6 mb-8 slide-in">
+      <h3 class="text-xl font-bold mb-4 slide-in">Event Highlights</h3>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        <div class="bg-gray-200 h-40 rounded flex items-center justify-center">
+        <div class="bg-gray-200 h-40 rounded flex items-center justify-center slide-in">
         <img src="https://img.freepik.com/free-photo/happy-football-players_23-2148905586.jpg?t=st=1735565686~exp=1735569286~hmac=d20048241221217be86522f60438f45984511a7e96e09738f17b00a82813a872&w=740" class="rounded h-40 w-full">
         </div>
-        <div class="bg-gray-200 h-40 rounded flex items-center justify-center">
+        <div class="bg-gray-200 h-40 rounded flex items-center justify-center slide-in">
           <p class="text-gray-500">Picture Placeholder 2</p>
         </div>
-        <div class="bg-gray-200 h-40 rounded flex items-center justify-center">
+        <div class="bg-gray-200 h-40 rounded flex items-center justify-center slide-in">
           <p class="text-gray-500">Picture Placeholder 3</p>
         </div>
       </div>
     </section>
 
     <!-- Guest of Honor -->
-<section class="bg-white shadow-md rounded-lg p-6 mb-8">
+<section class="bg-white shadow-md rounded-lg p-6 mb-8 slide-in">
     <h3 class="text-xl font-bold mb-4">🎤 Guest of Honor</h3>
     <p class="text-lg">
       We are thrilled to announce that the **Guest of Honor** for this exciting event will be:
@@ -72,9 +227,9 @@
   
 
     <!-- Sponsors -->
-    <section class="bg-white shadow-md rounded-lg p-6 mb-8">
+    <section class="bg-white shadow-md rounded-lg p-6 mb-8 slide-in">
       <h3 class="text-xl font-bold mb-4">🙏 Sponsors</h3>
-      <ul class="list-disc list-inside text-lg">
+      <ul class="list-disc list-inside text-lg slide-in">
         <li>Our Father Pub</li>
         <li>Lovers Inn Pub</li>
         <li>DJ DANISCO</li>
@@ -86,7 +241,7 @@
     </section>
 
     <!-- Sponsorship Contact -->
-    <section class="bg-white shadow-md rounded-lg p-6 mb-8">
+    <section class="bg-white shadow-md rounded-lg p-6 mb-8 slide-in">
       <h3 class="text-xl font-bold mb-4">🤝 For Sponsorship</h3>
       <p class="text-lg">
         Contact us at: 
@@ -101,5 +256,28 @@
       <p>&copy; 2025 Sisea Care GH. All Rights Reserved.</p>
     </div>
   </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const slideElements = document.querySelectorAll(".slide-in, .slide-out");
+  
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("slide-in");
+                        entry.target.classList.remove("slide-out");
+                    } else {
+                        entry.target.classList.remove("slide-in");
+                        entry.target.classList.add("slide-out");
+                    }
+                });
+            },
+            { threshold: 0.1 } // Trigger animation when 10% of the element is visible
+        );
+  
+        slideElements.forEach((el) => observer.observe(el));
+    });
+  </script>
 </body>
 </html>
