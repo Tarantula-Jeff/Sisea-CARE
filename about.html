@@ -3,8 +3,140 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us - EduCare</title>
+  <title>About Us - Sisea Care</title>
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    .underline-custom {
+        position: relative;
+        display: inline-block;
+        padding-bottom: 5px; /* Adjust padding to position underline */
+    }
+    
+    .underline-custom::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 4px; /* Adjust underline thickness */
+        background: linear-gradient(to right, #FFD700, #FF8C00); /* Gradient colors */
+        border-radius: 2px; /* Smooth edges */
+        transform: scaleX(0); /* Start with no underline */
+        transform-origin: right;
+        transition: transform 0.4s ease;
+    }
+    
+    .underline-custom:hover::after {
+        transform: scaleX(1); /* Full underline on hover */
+        transform-origin: left;
+    }
+    </style>
+    
+
+  <style>
+    /* Your in-page CSS */
+    .playwrite-au-vic-guides-regular {
+        font-family: "Playwrite AU VIC Guides", serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+</style>
+
+<style>
+.unlock-regular {
+font-family: "Unlock", serif;
+font-weight: 400;
+font-style: normal;
+}
+</style>
+
+  <style>
+    /* Slide In */
+    .slide-in {
+        animation: slideIn 1.5s ease-out forwards;
+    }
+    @keyframes slideIn {
+        from {
+            transform: translateY(-50px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    /* Slide Out */
+    .slide-out {
+        animation: slideOut 1.5s ease-in forwards;
+    }
+    @keyframes slideOut {
+        from {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        to {
+            transform: translateY(-50px);
+            opacity: 0;
+        }
+    }
+</style>
+
+      
+  <style>
+
+      /* Animations */
+      .fade-in {
+          animation: fadeIn 2s ease-in-out;
+      }
+      @keyframes fadeIn {
+          from {
+              opacity: 0;
+          }
+          to {
+              opacity: 1;
+          }
+      }
+
+      .slide-in {
+          animation: slideIn 1.5s ease-out;
+      }
+      @keyframes slideIn {
+          from {
+              transform: translateY(-50px);
+              opacity: 0;
+          }
+          to {
+              transform: translateY(0);
+              opacity: 1;
+          }
+      }
+
+      .pulse {
+          animation: pulse 2s infinite;
+      }
+      @keyframes pulse {
+          0%, 100% {
+              transform: scale(1);
+          }
+          50% {
+              transform: scale(1.1);
+          }
+      }
+  </style>
+
+<style>
+  /* Custom styles for carousel navigation */
+  .carousel-button {
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+  }
+  .carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+</style>
+
 
   <style>
     /* Circular Progress Bar Styles */
@@ -49,46 +181,125 @@
     </div>
   </div>
 
+  <script
+  src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+  defer
+  ></script>
 
-  <!-- Header -->
-  <header class="bg-blue-600 text-white py-6">
-    <nav class="flex items-center space-x-4 fade-in">
-        <a href="./gallerypage.html" class="hover:text-gray-400">Home</a>
-        <a href="https://cyrilend-7j9k.vercel.app/" class="hover:text-gray-400">Contact/<span class="text-yellow-700 hover:text-gray-400">Book</span></a>
-        <div class="flex space-x-3">
-            <a href="https://www.facebook.com/share/184zfjj9mw/?mibextid=LQQJ4d" target="_blank" class="text-xl hover:text-blue-500">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="https://instagram.com/__cyrilphotos?igshid=NTc4MTIwNjQ2YQ==https://instagram.com/your-page" target="_blank" class="text-xl hover:text-pink-500">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://wa.me/+233543591986" target="_blank" class="text-xl hover:text-green-500 ml-28">
-                <i class="fab fa-whatsapp"></i>
-            </a>
-        </div>
-        
+  <header class="bg-gradient-to-r from-blue-500 to-blue-700 text-white py-4 shadow-md fade-in">
+    <nav class="flex items-center justify-between px-6">
+   
+  
+      <!-- Hamburger Icon -->
+      <button
+        id="menu-toggle"
+        class="sm:hidden text-white text-2xl focus:outline-none"
+      >
+        &#9776;
+      </button>
+  
+      <!-- Navigation Links -->
+      <ul
+        id="menu"
+        class="hidden flex-col sm:flex sm:flex-row sm:items-center sm:space-x-4 uppercase text-xs sm:text-sm bg-blue-500 sm:bg-transparent sm:static fixed inset-0 sm:inset-auto px-6 sm:px-0 py-6 sm:py-0 space-y-6 sm:space-y-0 z-50"
+      >
+        <!-- Close Button -->
+        <button
+          id="menu-close"
+          class="absolute top-4 right-6 text-white text-2xl sm:hidden"
+        >
+          &times;
+        </button>
+  
+        <li>
+          <a
+            href="./index.html"
+            class="hover:bg-white hover:text-blue-600 bg-orange-400 rounded px-3 py-1 transition"
+          >
+            Home
+          </a>
+        </li>
+        <li>
+          <a
+            href="./whatwedo.html"
+            class="hover:bg-white hover:text-blue-600 bg-orange-400 rounded px-3 py-1 transition"
+          >
+            What We Do
+          </a>
+        </li>
+        <li>
+          <a
+            href="./ourcauses.html"
+            class="hover:bg-white hover:text-blue-600 bg-orange-400 rounded px-3 py-1 transition"
+          >
+            Our Causes
+          </a>
+        </li>
+        <li>
+          <a
+            href="#"
+            class="hover:bg-white hover:text-blue-600 bg-orange-400 rounded px-3 py-1 transition"
+          >
+            Contact
+          </a>
+        </li>
+      </ul>
+  
+      <!-- Social Media Icons -->
+      <div class="hidden sm:flex space-x-4">
+        <a
+          href="https://www.facebook.com/share/184zfjj9mw/?mibextid=LQQJ4d"
+          target="_blank"
+          class="text-xl hover:text-blue-300 transition"
+        >
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a
+          href="https://instagram.com/__cyrilphotos?igshid=NTc4MTIwNjQ2YQ==https://instagram.com/your-page"
+          target="_blank"
+          class="text-xl hover:text-pink-300 transition"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a
+          href="https://wa.me/+233543591986"
+          target="_blank"
+          class="text-xl hover:text-green-300 transition"
+        >
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
     </nav>
-    <div class="container mx-auto text-center">
-      <h1 class="text-3xl font-bold">About Us</h1>
-      <p class="mt-2 text-lg">Learn more about our team, vision, and mission</p>
+  
+  
+    <!-- Hero Section -->
+    <div class="container mx-auto text-center mt-6 fade-in">
+      <h1 class="text-4xl font-extrabold">About Us</h1>
+      <p class="mt-3 text-lg font-light">Learn more about our team, vision, and mission</p>
     </div>
   </header>
+  
 
   <!-- Team Section -->
-  <section class="container mx-auto px-4 py-10">
+  <section class="container mx-auto px-4 py-10 relative slide-in">
+
+    <div class="logo-container absolute top-0 left-0 p-4">
+        <img src="./Components/SesiaLOGO-modified.png" alt="siseaCARE Logo" class="w-16 h-16 object-contain pulse">
+      </div>
+      
     <h2 class="text-2xl font-bold text-center text-blue-600 mb-8">Meet Our Team</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
       <!-- Placeholder for Team Members -->
       <div class="text-center">
         <div class="w-32 h-32 mx-auto bg-gray-300 rounded-full overflow-hidden">
-          <img src="./Components/pictures/mem (3)-modified.png" alt="Team Member" class="w-full h-full object-cover">
+          <img src="./Components/pictures/nms (1)-modified.png" alt="Team Member" class="w-full h-full object-cover">
         </div>
         <h3 class="mt-4 text-lg font-bold text-blue-600">Name</h3>
         <p class="text-sm text-gray-600">Role/Position</p>
       </div>
       <div class="text-center">
         <div class="w-32 h-32 mx-auto bg-gray-300 rounded-full overflow-hidden">
-          <img src="./Components/pictures/mem (3)-modified.png" alt="Team Member" class="w-full h-full object-cover">
+          <img src="./Components/pictures/nms (2)-modified.png" alt="Team Member" class="w-full h-full object-cover">
         </div>
         <h3 class="mt-4 text-lg font-bold text-blue-600">Name</h3>
         <p class="text-sm text-gray-600">Role/Position</p>
@@ -97,43 +308,43 @@
         <div class="w-32 h-32 mx-auto bg-gray-300 rounded-full overflow-hidden">
           <img src="./Components/pictures/mem (1)-modified.png" alt="Team Member" class="w-full h-full object-cover">
         </div>
-        <h3 class="mt-4 text-lg font-bold text-blue-600">Name</h3>
-        <p class="text-sm text-gray-600">Role/Position</p>
+        <h3 class="mt-4 text-lg font-bold text-blue-600">Clemence Godsway</h3>
+        <p class="text-sm text-gray-600">Administrator</p>
       </div>
       <div class="text-center">
         <div class="w-32 h-32 mx-auto bg-gray-300 rounded-full overflow-hidden">
           <img src="./Components/pictures/mem (2)-modified.png" alt="Team Member" class="w-full h-full object-cover">
         </div>
-        <h3 class="mt-4 text-lg font-bold text-blue-600">Name</h3>
-        <p class="text-sm text-gray-600">Role/Position</p>
+        <h3 class="mt-4 text-lg font-bold text-blue-600">Stephen Kojo Ogbeh</h3>
+        <p class="text-sm text-gray-600">Assistant Director</p>
       </div>
       <div class="text-center">
         <div class="w-32 h-32 mx-auto bg-gray-300 rounded-full overflow-hidden">
           <img src="./Components/pictures/mem (4)-modified.png" alt="Team Member" class="w-full h-full object-cover">
         </div>
-        <h3 class="mt-4 text-lg font-bold text-blue-600">Name</h3>
-        <p class="text-sm text-gray-600">Role/Position</p>
+        <h3 class="mt-4 text-lg font-bold text-blue-600">Kelvin Damani</h3>
+        <p class="text-sm text-gray-600">Handle: https@KwlvinD95</p>
       </div>
       <div class="text-center">
         <div class="w-32 h-32 mx-auto bg-gray-300 rounded-full overflow-hidden">
-          <img src="https://via.placeholder.com/150" alt="Team Member" class="w-full h-full object-cover">
+          <img src="./Components/pictures/nms (5)-modified.png" alt="Team Member" class="w-full h-full object-cover">
         </div>
-        <h3 class="mt-4 text-lg font-bold text-blue-600">Name</h3>
-        <p class="text-sm text-gray-600">Role/Position</p>
+        <h3 class="mt-4 text-lg font-bold text-blue-600">Dotse Abigail</h3>
+        <p class="text-sm text-gray-600">Counselor</p>
       </div>
       <div class="text-center">
         <div class="w-32 h-32 mx-auto bg-gray-300 rounded-full overflow-hidden">
-          <img src="https://via.placeholder.com/150" alt="Team Member" class="w-full h-full object-cover">
+          <img src="./Components/pictures/nms (4)-modified.png" alt="Team Member" class="w-full h-full object-cover">
         </div>
-        <h3 class="mt-4 text-lg font-bold text-blue-600">Name</h3>
-        <p class="text-sm text-gray-600">Role/Position</p>
+        <h3 class="mt-4 text-lg font-bold text-blue-600">Jeffrey Nsiah</h3>
+        <p class="text-sm text-gray-600">IT SUPPORT</p>
       </div>
       <div class="text-center">
         <div class="w-32 h-32 mx-auto bg-gray-300 rounded-full overflow-hidden">
-          <img src="https://via.placeholder.com/150" alt="Team Member" class="w-full h-full object-cover">
+          <img src="./Components/pictures/nms (3)-modified.png" alt="Team Member" class="w-full h-full object-cover">
         </div>
-        <h3 class="mt-4 text-lg font-bold text-blue-600">Name</h3>
-        <p class="text-sm text-gray-600">Role/Position</p>
+        <h3 class="mt-4 text-lg font-bold text-blue-600">Coffie Yvonne</h3>
+        <p class="text-sm text-gray-600">Counselor</p>
       </div>
     </div>
   </section>
@@ -148,6 +359,71 @@
     </div>
   </section>
 
+  <section class="bg-orange-400 py-16 px-4 sm:px-8 md:px-16 ">
+    
+  
+      <!-- Objectives Section -->
+      <div class="mb-12">
+        <h2 class="text-2xl md:text-3xl font-bold text-blue-600">Our Objectives</h2>
+        <ul class="mt-6 space-y-4 text-gray-700 text-lg list-disc list-inside">
+          <li>Provide educational materials, including textbooks, stationery, and digital resources, to needy schools.</li>
+          <li>Enhance teacher capacity through training and workshops.</li>
+          <li>Foster community engagement and parental involvement in education.</li>
+          <li>Promote literacy, numeracy, and skills development among students.</li>
+          <li>Advocate for education policy reforms and resource allocation.</li>
+        </ul>
+      </div>
+  
+      <!-- Core Values Section -->
+      <div class="mb-12">
+        <h2 class="text-2xl md:text-3xl font-bold text-blue-600">Core Values</h2>
+        <ul class="mt-6 space-y-4 text-gray-700 text-lg list-disc list-inside">
+          <li><strong>Equality:</strong> Every child deserves equal access to education.</li>
+          <li><strong>Empowerment:</strong> Education empowers individuals and communities.</li>
+          <li><strong>Compassion:</strong> We care about the well-being and potential of every student.</li>
+          <li><strong>Collaboration:</strong> Partnership with schools, communities, and stakeholders.</li>
+          <li><strong>Transparency:</strong> Accountability and openness in all our operations.</li>
+        </ul>
+      </div>
+  
+      <!-- Target Beneficiaries Section -->
+      <div class="mb-12">
+        <h2 class="text-2xl md:text-3xl font-bold text-blue-600">Our Target Beneficiaries</h2>
+        <ul class="mt-6 space-y-4 text-gray-700 text-lg list-disc list-inside">
+          <li>Underprivileged schools</li>
+          <li>Disadvantaged students</li>
+          <li>Teachers and educators</li>
+          <li>Local communities</li>
+        </ul>
+      </div>
+  
+      <!-- Programs and Services Section -->
+      <div class="mb-12">
+        <h2 class="text-2xl md:text-3xl font-bold text-blue-600">Programs and Services</h2>
+        <ul class="mt-6 space-y-4 text-gray-700 text-lg list-disc list-inside">
+          <li>Educational Material Distribution</li>
+          <li>Teacher Training and Development</li>
+          <li>Community Engagement Initiatives</li>
+          <li>Advocacy and Policy Reform</li>
+          <li>Digital Resource Access</li>
+        </ul>
+      </div>
+  
+      <!-- Get Involved Section -->
+      <div class="bg-blue-50 rounded-lg p-8 shadow-lg">
+        <h2 class="text-2xl md:text-3xl font-bold text-blue-600">Get Involved</h2>
+        <p class="mt-4 text-gray-700 text-lg">
+          Join us in making a difference! Here's how you can help:
+        </p>
+        <ul class="mt-6 space-y-4 text-gray-700 text-lg list-disc list-inside">
+          <li>Donate educational materials or funds.</li>
+          <li>Volunteer your time and expertise.</li>
+          <li>Partner with us as a corporate sponsor.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  
   <!-- Contact Section -->
   <section class="bg-blue-600 text-white py-10">
     <div class="container mx-auto px-4">
@@ -169,6 +445,31 @@
       </form>
     </div>
   </section>
+
+  <div class="fixed bottom-4 right-4">
+    <button class="p-4 bg-green-500 rounded-full shadow-lg hover:bg-green-600 transition focus:outline-none" title="Chat with us">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Chatbot" class="h-6 w-6">
+    </button>
+</div>
+
+
+
+<script>
+  const menuToggle = document.getElementById("menu-toggle");
+  const menuClose = document.getElementById("menu-close");
+  const menu = document.getElementById("menu");
+
+  // Show menu
+  menuToggle.addEventListener("click", () => {
+    menu.classList.remove("hidden");
+  });
+
+  // Hide menu
+  menuClose.addEventListener("click", () => {
+    menu.classList.add("hidden");
+  });
+</script>
+
 
   <script>
     // JavaScript to animate the progress circle
@@ -197,5 +498,27 @@
     window.addEventListener('scroll', updateProgress);
   </script>
 
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const slideElements = document.querySelectorAll(".slide-in, .slide-out");
+  
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("slide-in");
+                        entry.target.classList.remove("slide-out");
+                    } else {
+                        entry.target.classList.remove("slide-in");
+                        entry.target.classList.add("slide-out");
+                    }
+                });
+            },
+            { threshold: 0.1 } // Trigger animation when 10% of the element is visible
+        );
+  
+        slideElements.forEach((el) => observer.observe(el));
+    });
+  </script>
 </body>
 </html>

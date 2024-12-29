@@ -8,6 +8,144 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Meow+Script&family=Teachers:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+
+  <style>
+    .underline-custom {
+        position: relative;
+        display: inline-block;
+        padding-bottom: 5px; /* Adjust padding to position underline */
+    }
+    
+    .underline-custom::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 4px; /* Adjust underline thickness */
+        background: linear-gradient(to right, #FFD700, #FF8C00); /* Gradient colors */
+        border-radius: 2px; /* Smooth edges */
+        transform: scaleX(0); /* Start with no underline */
+        transform-origin: right;
+        transition: transform 0.4s ease;
+    }
+    
+    .underline-custom:hover::after {
+        transform: scaleX(1); /* Full underline on hover */
+        transform-origin: left;
+    }
+    </style>
+    
+
+  <style>
+    /* Your in-page CSS */
+    .playwrite-au-vic-guides-regular {
+        font-family: "Playwrite AU VIC Guides", serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+</style>
+
+<style>
+.unlock-regular {
+font-family: "Unlock", serif;
+font-weight: 400;
+font-style: normal;
+}
+</style>
+
+  <style>
+    /* Slide In */
+    .slide-in {
+        animation: slideIn 1.5s ease-out forwards;
+    }
+    @keyframes slideIn {
+        from {
+            transform: translateY(-50px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    /* Slide Out */
+    .slide-out {
+        animation: slideOut 1.5s ease-in forwards;
+    }
+    @keyframes slideOut {
+        from {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        to {
+            transform: translateY(-50px);
+            opacity: 0;
+        }
+    }
+</style>
+
+      
+  <style>
+
+      /* Animations */
+      .fade-in {
+          animation: fadeIn 2s ease-in-out;
+      }
+      @keyframes fadeIn {
+          from {
+              opacity: 0;
+          }
+          to {
+              opacity: 1;
+          }
+      }
+
+      .slide-in {
+          animation: slideIn 1.5s ease-out;
+      }
+      @keyframes slideIn {
+          from {
+              transform: translateY(-50px);
+              opacity: 0;
+          }
+          to {
+              transform: translateY(0);
+              opacity: 1;
+          }
+      }
+
+      .pulse {
+          animation: pulse 2s infinite;
+      }
+      @keyframes pulse {
+          0%, 100% {
+              transform: scale(1);
+          }
+          50% {
+              transform: scale(1.1);
+          }
+      }
+  </style>
+
+<style>
+  /* Custom styles for carousel navigation */
+  .carousel-button {
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+  }
+  .carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+</style>
+
+
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+defer
+></script>
+
 </head>
 
 <body>
@@ -18,7 +156,7 @@
     <a href="./announcement.html" class="bg-black text-white px-3 py-1 rounded text-xs sm:text-sm mr-2 hover:bg-gray-700">Learn More</a>
   </div>
 
-  <header class="bg-blend-multiply bg-blue-400 bg-[url(https://images.unsplash.com/photo-1473649085228-583485e6e4d7?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-cover flex flex-col gap-10 min-h-80 p-5 sm:p-10 md:p-20 relative">
+  <header class="bg-blend-multiply bg-blue-400 bg-[url(https://images.unsplash.com/photo-1473649085228-583485e6e4d7?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-cover flex flex-col gap-10 min-h-80 p-5 sm:p-10 md:p-20 relative fade-in">
   
     <!-- Logo Space -->
     <div class="absolute top-4 left-4 w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-full border-2 border-gray-300 flex items-center justify-center z-50">
@@ -28,7 +166,7 @@
     <!-- Main Header Content -->
     <div class="flex flex-wrap justify-between items-center text-white gap-4 pt-16 sm:pt-20">
       <h1 class="text-white text-2xl sm:text-3xl md:text-4xl">
-        <span class="text-yellow-500">Sis3a</span><span class="font-bold">CARE!</span>
+        <span class="text-yellow-500 slide-in">Sis3a</span><span class="font-bold">CARE!</span>
       </h1>
       <nav class="w-full sm:w-auto">
         <ul class="flex flex-wrap justify-center gap-4 uppercase text-xs sm:text-sm">
@@ -43,7 +181,7 @@
     </div>
 
     <div class="text-center sm:text-left">
-      <div class="max-w-md bg-gray-800/40 p-4 sm:p-5 text-white mx-auto sm:mx-0">
+      <div class="max-w-md bg-gray-800/40 p-4 sm:p-5 text-white mx-auto sm:mx-0 slide-in">
         <h1 class="text-2xl sm:text-4xl font-bold">Supporting the undervalued to have value</h1>
         <p class="mb-4 text-sm sm:text-base">
           <span class="text-yellow-500">Sis3a</span><span class="font-bold">CARE</span> is a non-profit organization dedicated to bridging the educational resource gap in underprivileged schools. We strive to empower students, teachers, and communities by providing essential educational materials, fostering a supportive learning environment, and promoting academic excellence. 
@@ -51,7 +189,7 @@
         <a href="#" class="bg-orange-500 text-white font-medium rounded px-4 py-1">Support us today!</a>
       </div>
 
-      <div id="container" class="mt-10 bg-gray-700/50 text-white p-4 sm:p-10 flex flex-col gap-5 sm:gap-10">
+      <div id="container" class="mt-10 bg-gray-700/50 text-white p-4 sm:p-10 flex flex-col gap-5 sm:gap-10 slide-in">
         <h4 class="text-2xl sm:text-3xl md:text-5xl font-bold">Our causes are in need of help!</h4>
         <p class="text-sm sm:text-lg font-light">
           Sis3a CARE is committed to bridging educational gaps by providing essential resources, enhancing teacher capacity, and fostering literacy and skills development. We advocate for education reforms, promote digital inclusion, and empower communities through parental involvement. Our focus includes supporting girls’ education, creating safe learning environments, and aiding schools affected by disasters. Through these efforts, we aim to ensure every child has equal access to quality education and opportunities for growth.
@@ -66,5 +204,28 @@
   </header>
 </main>
 <footer></footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+      const slideElements = document.querySelectorAll(".slide-in, .slide-out");
+
+      const observer = new IntersectionObserver(
+          (entries) => {
+              entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                      entry.target.classList.add("slide-in");
+                      entry.target.classList.remove("slide-out");
+                  } else {
+                      entry.target.classList.remove("slide-in");
+                      entry.target.classList.add("slide-out");
+                  }
+              });
+          },
+          { threshold: 0.1 } // Trigger animation when 10% of the element is visible
+      );
+
+      slideElements.forEach((el) => observer.observe(el));
+  });
+</script>
 </body>
 </html>
