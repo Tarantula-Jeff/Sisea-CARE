@@ -9,22 +9,23 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
- 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+AU+VIC+Guides&family=Unlock&display=swap" rel="stylesheet">
 
-  <head>
-  // <uniquifier>: Use a unique and descriptive class name
-    // <weight>: Use a value from 200 to 800
-    
-    .karla-<uniquifier> {
-      font-family: "Karla", serif;
-      font-optical-sizing: auto;
-      font-weight: <weight>;
-      font-style: normal;
-    }
-
+  <style>
+  .karla-heading {
+    font-family: 'Karla', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .karla-body {
+    font-family: 'Karla', sans-serif;
+    font-size: 16px;
+  }
+  </style>
+  
   <style>
     .underline-custom {
         position: relative;
@@ -157,12 +158,9 @@ font-style: normal;
 </style>
 
 
-<script
-src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
-defer
-></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
 </head>
+
 <body class="bg-gray-100 text-gray-800 bg-[url(https://images.unsplash.com/photo-1642444616393-df04dcb1492c?q=80&w=1414&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] ">
   <!-- Header -->
   <header class="bg-blue-600 text-white py-6">
