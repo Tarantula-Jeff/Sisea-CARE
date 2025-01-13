@@ -9,7 +9,35 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Meow+Script&family=Teachers:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
 
+ 
   <style>
+    /* Slider Container */
+    .slider {
+      position: relative;
+      width: 100%;
+      max-width: 1000px;
+      height: 400px;
+      margin: auto;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Slider Images */
+    .slides img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+
+    /* Show first image by default */
+    .slides img.active {
+      display: block;
+    }
+  </style>
+ 
+ <style>
     .underline-custom {
         position: relative;
         display: inline-block;
@@ -252,6 +280,15 @@ defer
   </div>
 </section>
 
+<div class="slider">
+  <div class="slides">
+    <img src="./Components/pictures/siseafam.JPG" class="active" alt="Slide 1">
+    <img src="./Components/pictures/logologo.JPG" alt="Slide 2">
+    <img src="./Components/pictures/crowd.JPG" alt="Slide 3">
+    <img src="./Components/pictures/sompik.JPG" alt="Slide 4">
+  </div>
+</div>
+
 <!-- Volunteer Section -->
 <section class="bg-gray-50 py-16">
   <div class="container mx-auto">
@@ -291,6 +328,14 @@ defer
   </div>
 </section>
 
+<div class="fixed bottom-4 right-4">
+  <a href="https://wa.me/+233209645970">
+  <button class="p-4 bg-green-500 rounded-full shadow-lg hover:bg-green-600 transition focus:outline-none" title="Chat with us">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Chatbot" class="h-6 w-6">
+  </button>
+</a>
+</div>
+
 <script>
   document.addEventListener("DOMContentLoaded", () => {
       const slideElements = document.querySelectorAll(".slide-in, .slide-out");
@@ -312,6 +357,20 @@ defer
 
       slideElements.forEach((el) => observer.observe(el));
   });
+</script>
+
+<script>
+  const slides = document.querySelectorAll(".slides img");
+  let currentIndex = 0;
+
+  function showNextSlide() {
+    slides[currentIndex].classList.remove("active");
+    currentIndex = (currentIndex + 1) % slides.length;
+    slides[currentIndex].classList.add("active");
+  }
+
+  // Change image every 2 seconds (2000ms)
+  setInterval(showNextSlide, 5000);
 </script>
 </body>
 </html>
