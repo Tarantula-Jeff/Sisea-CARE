@@ -9,7 +9,27 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Meow+Script&family=Teachers:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
 
- 
+  <style>
+    /* Initial state before sliding in */
+  .slide-in-left {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 0.8s ease-in-out;
+  }
+  
+  .slide-in-right {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 0.8s ease-in-out;
+  }
+  
+  /* Active state when in view */
+  .slide-in-active {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  </style>
+
   <style>
     /* Slider Container */
     .slider {
@@ -233,7 +253,7 @@ defer
 </main>
 
  <!-- Features Section -->
- <section class="bg-white py-16">
+ <section class="bg-white py-16 slide-in-left">
   <div class="container mx-auto text-center">
     <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
       <!-- Feature Item -->
@@ -290,7 +310,7 @@ defer
 </div>
 
 <!-- Volunteer Section -->
-<section class="bg-gray-50 py-16">
+<section class="bg-gray-50 py-16 slide-in">
   <div class="container mx-auto">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
 
@@ -304,19 +324,19 @@ defer
         
       <!-- Text Content -->
       <div>
-        <div class="mb-8">
+        <div class="mb-8 slide-in-left">
           <h3 class="text-xl font-bold text-green-600">Become A Volunteer With Us</h3>
           <p class="text-gray-600 mt-2">
-            We need your help to help the poor children in the country. With your contribution, we can provide them better educational facilities so that they can eventually become responsible citizens of the country.
+          We need your help to help the poor children in the country. With your contribution, we can provide them better educational facilities so that they can eventually become responsible citizens of the country.
           </p>
         </div>
-        <div class="mb-8">
+        <div class="mb-8 slide-in-right">
           <h3 class="text-xl font-bold text-green-600">Celebrate Their Special Day</h3>
           <p class="text-gray-600 mt-2">
             Every child loves to feel special. We make it possible by celebrating their birthdays with their loved ones. We also celebrate their achievements to inspire them to do better in life and add value wherever they go.
           </p>
         </div>
-        <div>
+        <div class="slide-in-left">
           <h3 class="text-xl font-bold text-green-600">Provide Food For Every Child</h3>
           <p class="text-gray-600 mt-2">
             We are committed to feeding every hungry child in the country. We put in every possible effort to make this happen and bring a smile to the face of the children who cannot afford their meals on a daily basis.
@@ -372,5 +392,24 @@ defer
   // Change image every 2 seconds (2000ms)
   setInterval(showNextSlide, 5000);
 </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const slideInElements = document.querySelectorAll('.slide-in-left, .slide-in-right');
+  
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('slide-in-active');
+        } else {
+          entry.target.classList.remove('slide-in-active'); // Remove when scrolling out
+        }
+      });
+    }, { threshold: 0.2 });
+  
+    slideInElements.forEach(el => observer.observe(el));
+  });
+  
+  </script>
 </body>
 </html>
