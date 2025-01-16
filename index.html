@@ -10,6 +10,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Meow+Script&family=Teachers:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
 
   <style>
+
+    /* Initial state: Slide in from the bottom */
+.slide-in-bottom {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 0.8s ease-in-out;
+}
+
+/* Active state: Slides into place */
+.slide-in-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+  </style>
+  
+  <style>
     /* Initial state before sliding in */
   .slide-in-left {
     opacity: 0;
@@ -316,10 +333,10 @@ defer
 
        <!-- Image Collage -->
        <div class="grid grid-cols-2 gap-4">
-          <img src="./Components/exact1.png" alt="Image 1" class="rounded-lg shadow-lg">
-          <img src="./Components/exact2.png" alt="Image 2" class="rounded-lg shadow-lg">
-          <img src="./Components/exact3.png" alt="Image 3" class="rounded-lg shadow-lg">
-          <img src="./Components/exact4.png" alt="Image 4" class="rounded-lg shadow-lg">
+          <img src="./Components/exact1.png" alt="Image 1" class="rounded-lg shadow-lg slide-in">
+          <img src="./Components/exact2.png" alt="Image 2" class="rounded-lg shadow-lg slide-in-right">
+          <img src="./Components/exact3.png" alt="Image 3" class="rounded-lg shadow-lg slide-in-left">
+          <img src="./Components/exact4.png" alt="Image 4" class="rounded-lg shadow-lg slide-in-bottom">
         </div>  
         
       <!-- Text Content -->
@@ -411,5 +428,23 @@ defer
   });
   
   </script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const slideInElements = document.querySelectorAll('.slide-in-bottom');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('slide-in-active');
+      } else {
+        entry.target.classList.remove('slide-in-active'); // Remove on scroll out
+      }
+    });
+  }, { threshold: 0.2 });
+
+  slideInElements.forEach(el => observer.observe(el));
+});
+</script>
 </body>
 </html>
