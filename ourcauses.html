@@ -3,8 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Courses - EduCare</title>
+  <title>Our causes - SiseaCare</title>
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* Initial state before sliding in */
+  .slide-in-left {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 0.8s ease-in-out;
+  }
+  
+  .slide-in-right {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 0.8s ease-in-out;
+  }
+  
+  /* Active state when in view */
+  .slide-in-active {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  </style>
+  
+
+
+
 </head>
 <body class="bg-gray-100 text-gray-800">
 
@@ -97,86 +122,86 @@
   </header>
 
   <!-- Main Content -->
-  <main class="container mx-auto px-4 py-10">
+  <main class="container mx-auto px-4 py-10 ">
     <!-- Introduction -->
     <div class="text-center mb-10">
-      <h2 class="text-2xl font-bold text-blue-600">Empowering Through Education</h2>
+      <h2 class="text-2xl font-bold text-blue-600">Vision</h2>
       <p class="mt-4 text-gray-700">
-        At EduCare, we offer a diverse range of courses tailored to enhance skills, knowledge, and growth. Whether you're a student, teacher, or community member, our programs are designed to meet your needs.
+        Striving for a world where every child, regardless of socio-economic background, has access to quality education and opportunities for growth.
       </p>
     </div>
 
     <!-- Course Cards -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
       <!-- Course 1 -->
-      <div class="bg-white shadow-md rounded-lg overflow-hidden">
-        <img src="https://via.placeholder.com/400x300" alt="Literacy Program" class="w-full h-48 object-cover">
+      <div class="bg-white shadow-md rounded-lg overflow-hidden slide-in-left">
+        <img src="./Components/OurCauses/skills.jpg" alt="Literacy Program" class="w-full h-48 object-cover">
         <div class="p-5">
-          <h3 class="text-xl font-bold text-blue-600">Literacy Program</h3>
+          <h3 class="text-xl font-bold text-blue-600">Educational Support</h3>
           <p class="mt-2 text-gray-600">
-            Enhance reading and writing skills through engaging and interactive sessions designed for all age groups.
+            Distributing textbooks, stationery, and digital resources to underprivileged schools to bridge the education gap.
           </p>
-          <a href="#" class="block mt-4 text-orange-500 font-semibold hover:underline">Learn More</a>
+          <a href="" class="block mt-4 text-orange-500 font-semibold hover:underline">Learn More</a>
         </div>
       </div>
 
       <!-- Course 2 -->
       <div class="bg-white shadow-md rounded-lg overflow-hidden">
-        <img src="https://via.placeholder.com/400x300" alt="Teacher Training" class="w-full h-48 object-cover">
+        <img src="./Components/OurCauses/child skill.jpg" alt="Teacher Training" class="w-full h-48 object-cover">
         <div class="p-5">
-          <h3 class="text-xl font-bold text-blue-600">Teacher Training</h3>
+          <h3 class="text-xl font-bold text-blue-600"> Developing Student Skills</h3>
           <p class="mt-2 text-gray-600">
-            Equip educators with modern teaching techniques to create dynamic and inclusive learning environments.
+           Supporting iteracy, numeracy, and essential skills development among students.
           </p>
-          <a href="#" class="block mt-4 text-orange-500 font-semibold hover:underline">Learn More</a>
+          <a href="" class="block mt-4 text-orange-500 font-semibold hover:underline">Learn More</a>
         </div>
       </div>
 
       <!-- Course 3 -->
-      <div class="bg-white shadow-md rounded-lg overflow-hidden">
-        <img src="https://via.placeholder.com/400x300" alt="Digital Skills" class="w-full h-48 object-cover">
+      <div class="bg-white shadow-md rounded-lg overflow-hidden slide-in-right">
+        <img src="./Components/OurCauses/community2.jpg" alt="Digital Skills" class="w-full h-48 object-cover">
         <div class="p-5">
-          <h3 class="text-xl font-bold text-blue-600">Digital Skills</h3>
+          <h3 class="text-xl font-bold text-blue-600">Promoting Community Engagement</h3>
           <p class="mt-2 text-gray-600">
-            Learn essential digital tools and techniques to thrive in the modern world and bridge the digital divide.
+            Encouraging parental involvement and fostering active participation in education.
           </p>
-          <a href="#" class="block mt-4 text-orange-500 font-semibold hover:underline">Learn More</a>
+          <a href="" class="block mt-4 text-orange-500 font-semibold hover:underline">Learn More</a>
         </div>
       </div>
 
       <!-- Course 4 -->
-      <div class="bg-white shadow-md rounded-lg overflow-hidden">
-        <img src="https://via.placeholder.com/400x300" alt="STEM Education" class="w-full h-48 object-cover">
+      <div class="bg-white shadow-md rounded-lg overflow-hidden slide-in-left">
+        <img src="./Components/OurCauses/corevalue.jpg" alt="STEM Education" class="w-full h-48 object-cover">
         <div class="p-5">
-          <h3 class="text-xl font-bold text-blue-600">STEM Education</h3>
+          <h3 class="text-xl font-bold text-blue-600">Core Values in Action</h3>
           <p class="mt-2 text-gray-600">
-            Inspire innovation and critical thinking through hands-on STEM projects and experiments.
+          Promoting equality, empowerment, compassion, collaboration, and transparency in all initiatives.
           </p>
-          <a href="#" class="block mt-4 text-orange-500 font-semibold hover:underline">Learn More</a>
+          <a href="" class="block mt-4 text-orange-500 font-semibold hover:underline">Learn More</a>
         </div>
       </div>
 
       <!-- Course 5 -->
-      <div class="bg-white shadow-md rounded-lg overflow-hidden">
-        <img src="https://via.placeholder.com/400x300" alt="Vocational Training" class="w-full h-48 object-cover">
+      <div class="bg-white shadow-md rounded-lg overflow-hidden slide-in-right">
+        <img src="./Components/OurCauses/teacheremp.jpg" alt="Vocational Training" class="w-full h-48 object-cover">
         <div class="p-5">
-          <h3 class="text-xl font-bold text-blue-600">Vocational Training</h3>
+          <h3 class="text-xl font-bold text-blue-600">Teacher Empowerment</h3>
           <p class="mt-2 text-gray-600">
-            Gain practical skills in various trades to enhance employability and self-sufficiency.
+          Conducting training and workshops to enhance the skills and capacity of educators.
           </p>
-          <a href="#" class="block mt-4 text-orange-500 font-semibold hover:underline">Learn More</a>
+          <a href="" class="block mt-4 text-orange-500 font-semibold hover:underline">Learn More</a>
         </div>
       </div>
 
       <!-- Course 6 -->
-      <div class="bg-white shadow-md rounded-lg overflow-hidden">
-        <img src="https://via.placeholder.com/400x300" alt="Girls Empowerment" class="w-full h-48 object-cover">
+      <div class="bg-white shadow-md rounded-lg overflow-hidden slide-in-right">
+        <img src="./Components/whatwedo/onegirl.jpg" alt="Girls Empowerment" class="w-full h-48 object-cover">
         <div class="p-5">
           <h3 class="text-xl font-bold text-blue-600">Girls’ Empowerment</h3>
           <p class="mt-2 text-gray-600">
             Support girls in education through mentorship, scholarships, and awareness campaigns.
           </p>
-          <a href="#" class="block mt-4 text-orange-500 font-semibold hover:underline">Learn More</a>
+          <a href="" class="block mt-4 text-orange-500 font-semibold hover:underline">Learn More</a>
         </div>
       </div>
     </div>
@@ -203,6 +228,25 @@
     menuClose.addEventListener("click", () => {
       menu.classList.add("hidden");
     });
+  </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const slideInElements = document.querySelectorAll('.slide-in-left, .slide-in-right');
+  
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('slide-in-active');
+        } else {
+          entry.target.classList.remove('slide-in-active'); // Remove when scrolling out
+        }
+      });
+    }, { threshold: 0.2 });
+  
+    slideInElements.forEach(el => observer.observe(el));
+  });
+  
   </script>
 
 </body>
