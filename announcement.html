@@ -10,6 +10,33 @@
       font-family: 'Arial', sans-serif;
     }
   </style>
+
+<style>
+  /* Slider Container */
+  .slider {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    height: 400px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Slider Images */
+  .slides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+  }
+
+  /* Show first image by default */
+  .slides img.active {
+    display: block;
+  }
+</style>
 </head>
 <body class="bg-gray-100 text-gray-800">
 
@@ -34,6 +61,37 @@
     </div>
   </section>
 
+  <div class="slider">
+    <div class="slides">
+      <img src="./Components/pictures/siseafam.JPG" class="active" alt="Slide 1">
+      <img src="./Components/pictures/logologo.JPG" alt="Slide 2">
+      <img src="./Components/pictures/crowd.JPG" alt="Slide 3">
+      <img src="./Components/pictures/sompik.JPG" alt="Slide 4">
+      <img src="./Components/pictures/logologo.JPG" alt="Slide 5">
+      <img src="./Components/pictures/crowd.JPG" alt="Slide 6">
+      <img src="./Components/pictures/sompik.JPG" alt="Slide 7">
+      <img src="./Components/pictures/logologo.JPG" alt="Slide 8">
+      <img src="./Components/pictures/crowd.JPG" alt="Slide 9">
+      <img src="./Components/pictures/sompik.JPG" alt="Slide 10">
+      <img src="./Components/pictures/logologo.JPG" alt="Slide 11">
+      <img src="./Components/pictures/crowd.JPG" alt="Slide 12">
+      <img src="./Components/pictures/sompik.JPG" alt="Slide 13">
+      <img src="./Components/pictures/logologo.JPG" alt="Slide 14">
+      <img src="./Components/pictures/crowd.JPG" alt="Slide 15">
+      <img src="./Components/pictures/sompik.JPG" alt="Slide 16">
+      <img src="./Components/pictures/logologo.JPG" alt="Slide 17">
+      <img src="./Components/pictures/crowd.JPG" alt="Slide 18">
+      <img src="./Components/pictures/sompik.JPG" alt="Slide 19">
+      <img src="./Components/pictures/logologo.JPG" alt="Slide 20">
+      <img src="./Components/pictures/crowd.JPG" alt="Slide 21">
+      <img src="./Components/pictures/sompik.JPG" alt="Slide 22">
+      <img src="./Components/pictures/logologo.JPG" alt="Slide 23">
+      <img src="./Components/pictures/crowd.JPG" alt="Slide 24">
+      <img src="./Components/pictures/sompik.JPG" alt="Slide 25">
+    </div>
+  </div>
+ 
+
   <!-- Picture Highlights Section -->
   <section class="py-8 bg-white">
     <div class="container mx-auto px-6">
@@ -43,7 +101,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <!-- Highlight 1 -->
         <div class="bg-gray-200 rounded-lg overflow-hidden shadow-md">
-          <img src="highlight1.jpg" alt="Goal Celebration" class="w-full h-48 object-cover">
+          <img src="./Components/football (1).JPG" alt="Goal Celebration" class="w-full h-48 object-cover">
           <div class="p-4">
             <h3 class="font-bold text-lg">Stunning Goal</h3>
             <p class="text-gray-600">Player X scored an incredible goal from 25 yards out in the 10th minute.</p>
@@ -104,6 +162,21 @@
       <p class="text-sm">&copy; 2024 Cyril Photos. All Rights Reserved.</p>
     </div>
   </footer>
+
+  <!--slides script-->
+<script>
+  const slides = document.querySelectorAll(".slides img");
+  let currentIndex = 0;
+
+  function showNextSlide() {
+    slides[currentIndex].classList.remove("active");
+    currentIndex = (currentIndex + 1) % slides.length;
+    slides[currentIndex].classList.add("active");
+  }
+
+  // Change image every 2 seconds (2000ms)
+  setInterval(showNextSlide, 5000);
+</script>
 
 </body>
 </html>
