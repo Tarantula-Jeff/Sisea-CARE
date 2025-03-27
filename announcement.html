@@ -1,194 +1,301 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Match Highlights</title>
+  <title>Sisea Care GH - Event Announcement</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+AU+VIC+Guides&family=Unlock&display=swap" rel="stylesheet">
+
   <style>
-    body {
-      font-family: 'Arial', sans-serif;
+  .karla-heading {
+    font-family: 'Karla', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .karla-body {
+    font-family: 'Karla', sans-serif;
+    font-size: 16px;
+  }
+  </style>
+  
+  <style>
+    .underline-custom {
+        position: relative;
+        display: inline-block;
+        padding-bottom: 5px; /* Adjust padding to position underline */
     }
+    
+    .underline-custom::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 4px; /* Adjust underline thickness */
+        background: linear-gradient(to right, #FFD700, #FF8C00); /* Gradient colors */
+        border-radius: 2px; /* Smooth edges */
+        transform: scaleX(0); /* Start with no underline */
+        transform-origin: right;
+        transition: transform 0.4s ease;
+    }
+    
+    .underline-custom:hover::after {
+        transform: scaleX(1); /* Full underline on hover */
+        transform-origin: left;
+    }
+    </style>
+    
+
+  <style>
+    /* Your in-page CSS */
+    .playwrite-au-vic-guides-regular {
+        font-family: "Playwrite AU VIC Guides", serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+</style>
+
+<style>
+.unlock-regular {
+font-family: "Unlock", serif;
+font-weight: 400;
+font-style: normal;
+}
+</style>
+
+  <style>
+    /* Slide In */
+    .slide-in {
+        animation: slideIn 1.5s ease-out forwards;
+    }
+    @keyframes slideIn {
+        from {
+            transform: translateY(-50px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    /* Slide Out */
+    .slide-out {
+        animation: slideOut 1.5s ease-in forwards;
+    }
+    @keyframes slideOut {
+        from {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        to {
+            transform: translateY(-50px);
+            opacity: 0;
+        }
+    }
+</style>
+
+      
+  <style>
+
+      /* Animations */
+      .fade-in {
+          animation: fadeIn 2s ease-in-out;
+      }
+      @keyframes fadeIn {
+          from {
+              opacity: 0;
+          }
+          to {
+              opacity: 1;
+          }
+      }
+
+      .slide-in {
+          animation: slideIn 1.5s ease-out;
+      }
+      @keyframes slideIn {
+          from {
+              transform: translateY(-50px);
+              opacity: 0;
+          }
+          to {
+              transform: translateY(0);
+              opacity: 1;
+          }
+      }
+
+      .pulse {
+          animation: pulse 2s infinite;
+      }
+      @keyframes pulse {
+          0%, 100% {
+              transform: scale(1);
+          }
+          50% {
+              transform: scale(1.1);
+          }
+      }
   </style>
 
 <style>
-  /* Slider Container */
-  .slider {
-    position: relative;
-    width: 100%;
-    max-width: 1000px;
-    height: 400px;
-    margin: auto;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* Custom styles for carousel navigation */
+  .carousel-button {
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
   }
-
-  /* Slider Images */
-  .slides img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: none;
-  }
-
-  /* Show first image by default */
-  .slides img.active {
-    display: block;
+  .carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.4);
   }
 </style>
-</head>
-<body class="bg-gray-100 text-gray-800">
 
-  <!-- Header Section -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800 bg-[url(https://images.unsplash.com/photo-1642444616393-df04dcb1492c?q=80&w=1414&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] ">
+  <!-- Header -->
   <header class="bg-blue-600 text-white py-6">
-    <div class="container mx-auto text-center">
-      <h1 class="text-3xl font-bold">Match Highlights</h1>
-      <p class="text-lg">A recap of the thrilling game and key moments</p>
+    <div class="container mx-auto px-4 text-center"> 
+      <h1 class="text-3xl font-bold">Sisea Care GH</h1>
+      <p class="mt-2 text-lg">Event Announcement</p>
     </div>
   </header>
 
-  <!-- Highlights Overview -->
-  <section class="py-8">
-    <div class="container mx-auto px-6">
-      <h2 class="text-2xl font-bold mb-4">Game Overview</h2>
-      <p class="text-gray-700 mb-6">
-        The match between <strong>Team A</strong> and <strong>Team B</strong> was one for the books! With an exciting first half and a nail-biting finish, the game kept fans on the edge of their seats.
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 py-8">
+    <!-- Event Details -->
+    <section class="bg-white shadow-md rounded-lg p-6 mb-8 slide-in">
+      <h2 class="text-2xl font-bold mb-4 unlock-regular " >🎮 Rep Your Jersey Night & Gala Games 🎉</h2>
+      <p class="text-lg mb-4 karla-body ">
+        Join us for an exciting two-day event filled with fun and games!
       </p>
-      <p class="text-gray-700">
-        The final score was <strong>Team A: 3</strong> - <strong>Team B: 2</strong>. Key moments included an incredible goal by Player X in the 10th minute, a game-changing penalty save by Goalkeeper Y, and a dramatic last-minute winning goal by Player Z.
-      </p>
-    </div>
-  </section>
+      <ul class="list-disc list-inside text-lg karla-body ">
+        <li class="karla-body "><strong class="karla-body ">Rep Your Jersey Night & Video Games:</strong> 1st January 2025</li>
+        <li><strong>Gala Games:</strong> 2nd January 2025</li>
+      </ul>
+    </section>
 
-  <div class="slider">
-    <div class="slides">
-      <img src="./Components/pictures/siseafam.JPG" class="active" alt="Slide 1">
-      <img src="./Components/pictures/logologo.JPG" alt="Slide 2">
-      <img src="./Components/pictures/crowd.JPG" alt="Slide 3">
-      <img src="./Components/pictures/sompik.JPG" alt="Slide 4">
-      <img src="./Components/highlights/footselect (1).JPG" alt="Slide 5">
-      <img src="./Components/highlights/footselect (2).JPG" alt="Slide 6">
-      <img src="./Components/highlights/footselect (4).JPG" alt="Slide 7">
-      <img src="./Components/highlights/footselect (5).JPG" alt="Slide 8">
-      <img src="./Components/highlights/footselect (6).JPG" alt="Slide 9">
-      <img src="./Components/highlights/footselect (8).JPG" alt="Slide 10">
-      <img src="./Components/highlights/footselect (9).JPG" alt="Slide 11">
-      <img src="./Components/highlights/football (10).JPG" alt="Slide 12">
-      <img src="./Components/highlights/football (10).JPG" alt="Slide 14">
-      <img src="./Components/highlights/football (11).JPG" alt="Slide 15">
-      <img src="./Components/highlights/football (12).JPG" alt="Slide 16">
-      <img src="./Components/highlights/football (13).JPG" alt="Slide 17">
-      <img src="./Components/highlights/football (14).JPG" alt="Slide 18">
-      <img src="./Components/highlights/football (15).JPG" alt="Slide 19">
-      <img src="./Components/highlights/football (16).JPG" alt="Slide 20">
-      <img src="./Components/highlights/football (17).JPG" alt="Slide 21">
-      <img src="./Components/highlights/football (18).JPG" alt="Slide 22">
-      <img src="./Components/highlights/football (19).JPG" alt="Slide 23">
-      <img src="./Components/highlights/football (20).JPG" alt="Slide 24">
-      <img src="./Components/highlights/football (21).JPG" alt="Slide 25">
-      <img src="./Components/highlights/football (22).JPG" alt="Slide 26">
-      <img src="./Components/highlights/football (23).JPG" alt="Slide 27">
-      <img src="./Components/highlights/football (26).JPG" alt="Slide 28">
-      <img src="./Components/highlights/football (28).JPG" alt="Slide 29">
-      <img src="./Components/highlights/football (29).JPG" alt="Slide 30">
-      <img src="./Components/highlights/football (3).JPG" alt="Slide 31">
-      <img src="./Components/highlights/football (30).JPG" alt="Slide 32">
-      <img src="./Components/highlights/football (4).JPG" alt="Slide 33">
-      <img src="./Components/highlights/football (5).JPG" alt="Slide 34">
-      <img src="./Components/highlights/football (6).JPG" alt="Slide 35">
-      <img src="./Components/highlights/football (8).JPG" alt="Slide 36">
-      <img src="./Components/highlights/football (9).JPG" alt="Slide 37">
-     
-    </div>
-  </div>
- 
-
-  <!-- Picture Highlights Section -->
-  <section class="py-8 bg-white">
-    <div class="container mx-auto px-6">
-      <h2 class="text-2xl font-bold mb-4">Key Moments</h2>
+    <section class="bg-white shadow-md rounded-lg p-6 mb-8 slide-in flex items-center justify-between">
+        <!-- Text Section -->
+        <div class="w-full md:w-1/2 p-4">
+          <h2 class="text-2xl font-bold mb-4">Location</h2>
+          <p class="text-lg text-gray-700 mb-4">
+            Lolobi Ashiambi J.H.S
+          </p>
+          <a href="https://ng.maptons.com/3292408" class="text-blue-500 font-medium hover:underline">
+            Learn More
+          </a>
+        </div>
       
-      <!-- Highlight Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Highlight 1 -->
-        <div class="bg-gray-200 rounded-lg overflow-hidden shadow-md">
-          <img src="./Components/footselect (7).JPG" alt="Goal Celebration" class="w-full h-48 object-cover">
-          <div class="p-4">
-            <h3 class="font-bold text-lg">Stunning Goal</h3>
-            <p class="text-gray-600">Player X scored an incredible goal from 25 yards out in the 10th minute.</p>
-          </div>
+        <!-- Image Section -->
+        <div class="w-full md:w-1/2 p-4">
+          <a href="https://ng.maptons.com/3292408" target="_blank">
+            <img src="./Components/lolobi.png" alt="Descriptive Alt Text" class="rounded-md shadow-lg w-full">
+          </a>
         </div>
-
-        <!-- Highlight 2 -->
-        <div class="bg-gray-200 rounded-lg overflow-hidden shadow-md">
-          <img src="./Components/football (2).JPG" alt="Penalty Save" class="w-full h-48 object-cover">
-          <div class="p-4">
-            <h3 class="font-bold text-lg">Game-Changing Save</h3>
-            <p class="text-gray-600">Goalkeeper Y denied a penalty, keeping the score level in the second half.</p>
-          </div>
+      </section>
+      
+    <!-- Picture Placeholder -->
+    <section class="bg-white shadow-md rounded-lg p-6 mb-8 slide-in">
+      <h3 class="text-xl font-bold mb-4 slide-in">Event Highlights</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="bg-gray-200 h-40 rounded flex items-center justify-center slide-in">
+        <img src="https://img.freepik.com/free-photo/happy-football-players_23-2148905586.jpg?t=st=1735565686~exp=1735569286~hmac=d20048241221217be86522f60438f45984511a7e96e09738f17b00a82813a872&w=740" class="rounded h-40 w-full">
         </div>
-
-        <!-- Highlight 3 -->
-        <div class="bg-gray-200 rounded-lg overflow-hidden shadow-md">
-          <img src="./Components/football (24).JPG" alt="Winning Goal" class="w-full h-48 object-cover">
-          <div class="p-4">
-            <h3 class="font-bold text-lg">Last-Minute Winner</h3>
-            <p class="text-gray-600">Player Z scored a dramatic winning goal in the final moments.</p>
-          </div>
-        </div>
-
-        <!-- Highlight 4 -->
-        <div class="bg-gray-200 rounded-lg overflow-hidden shadow-md">
-          <img src="./Components/football (27).JPG" alt="Team Celebration" class="w-full h-48 object-cover">
-          <div class="p-4">
-            <h3 class="font-bold text-lg">Team Celebration</h3>
-            <p class="text-gray-600">The team celebrates their victory with fans in the stadium.</p>
-          </div>
-        </div>
-
-        <!-- Highlight 5 -->
-        <div class="bg-gray-200 rounded-lg overflow-hidden shadow-md">
-          <img src="./Components/fanexc.JPG" alt="Fan Excitement" class="w-full h-48 object-cover">
-          <div class="p-4">
-            <h3 class="font-bold text-lg">Fan Excitement</h3>
-            <p class="text-gray-600">The crowd went wild during key moments of the match.</p>
-          </div>
-        </div>
-
-        <!-- Highlight 6 -->
-        <div class="bg-gray-200 rounded-lg overflow-hidden shadow-md">
-          <img src="./Components/footballtry.JPG" alt="Trophy Presentation" class="w-full h-48 object-cover">
-          <div class="p-4">
-            <h3 class="font-bold text-lg">Trophy Presentation</h3>
-            <p class="text-gray-600">The team proudly lifted the trophy after their hard-fought victory.</p>
-          </div>
-        </div>
+        <div class="bg-gray-200 h-40 rounded flex items-center justify-center slide-in">
+            <img src="./Components/games.jpg" class="rounded h-40 w-full">
+            </div>
+            <div class="bg-gray-200 h-40 rounded flex items-center justify-center slide-in">
+                <img src="./Components/play.jpg" class="rounded h-40 w-full">
+                </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer Section -->
-  <footer class="bg-gray-800 text-white py-6">
+    <!-- Guest of Honor -->
+<section class="bg-white shadow-md rounded-lg p-6 mb-8 slide-in">
+    <h3 class="text-xl font-bold mb-4 unlock-regular">🎤 Guest of Honor</h3>
+    <p class="text-lg karla-body ">
+      We are thrilled to announce that the Guest of Honor for this exciting event will be:
+    </p>
+    <p class="text-lg font-bold mt-2">
+      <i class="fas fa-star text-yellow-500 mr-2 playwrite-au-vic-guides-regular"></i>
+     Hon. Kenneth Norviewu Delali
+    </p>
+    <p class="text-sm text-gray-700 mt-2 playwrite-au-vic-guides-regular">
+      Honorable Kenneth Norviewu Delali is the assembly man for Lolobi. He is also the CS at GES and finally he is he procurement officer at thr Guan constituency
+    </p>
+  </section>
+  
+
+    <!-- Sponsors -->
+    <section class="bg-white shadow-md rounded-lg p-6 mb-8 slide-in">
+      <h3 class="text-xl font-bold mb-4">🙏 Sponsors</h3>
+      <ul class="list-disc list-inside text-lg slide-in">
+        <li><img src="./Components/fP.png"></li>
+        <li><img src="./Components/love.png"></li>
+        <li><img src="./Components/dj.png"></li>
+        <li><img src="./Components/cloth.png"></li>
+        <li><img src="./Components/sobolo.png"></li>
+        <li><img src="./Components/river.png"></li>
+        <li><img src="./Components/mama.png"></li>
+      </ul>
+    </section>
+
+    <section 
+    class="bg-white shadow-md rounded-lg p-6 slide-in flex items-center justify-center" 
+    style="min-height: 100vh; display: flex; align-items: center; justify-content: center;"
+>
+    <div class="md:w-1/2">
+        <video autoplay muted loop playsinline class="w-full rounded-md shadow-lg">
+            <source src="./Components/contactmod.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</section>
+
+      
+      
+      
+      
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-blue-600 text-white py-4">
     <div class="container mx-auto text-center">
-      <p class="text-sm">&copy; 2024 Cyril Photos. All Rights Reserved.</p>
+      <p>&copy; 2025 Sisea Care GH. All Rights Reserved.</p>
     </div>
   </footer>
 
-  <!--slides script-->
-<script>
-  const slides = document.querySelectorAll(".slides img");
-  let currentIndex = 0;
-
-  function showNextSlide() {
-    slides[currentIndex].classList.remove("active");
-    currentIndex = (currentIndex + 1) % slides.length;
-    slides[currentIndex].classList.add("active");
-  }
-
-  // Change image every 2 seconds (2000ms)
-  setInterval(showNextSlide, 5000);
-</script>
-
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const slideElements = document.querySelectorAll(".slide-in, .slide-out");
+  
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("slide-in");
+                        entry.target.classList.remove("slide-out");
+                    } else {
+                        entry.target.classList.remove("slide-in");
+                        entry.target.classList.add("slide-out");
+                    }
+                });
+            },
+            { threshold: 0.1 } // Trigger animation when 10% of the element is visible
+        );
+  
+        slideElements.forEach((el) => observer.observe(el));
+    });
+  </script>
 </body>
 </html>
