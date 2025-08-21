@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exam Donation</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" type="text/css" href="styleg.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Navbar -->
+  <header class="bg-white shadow fixed w-full top-0 left-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+     <!-- Logo -->
+<a href="./index.html" class="flex items-center">
+  <img src="./Components/SesiaLOGO-modified.png" alt="Siseacare Logo" class="h-12 w-auto">
+</a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden sm:flex space-x-6">
+        <a href="./index.html" class="text-gray-700 hover:text-blue-600">Home</a>
+        <a href="./about.html" class="text-gray-700 hover:text-blue-600">About</a>
+        <a href="./portfolio.html" class="text-gray-700 hover:text-blue-600">Projects</a>
+        <a href="https://siscontact.vercel.app/" class="text-gray-700 hover:text-blue-600">Contact Us</a>
+      </nav>
+
+      <!-- Hamburger Button -->
+      <button id="menu-toggle" class="sm:hidden text-3xl text-gray-800 focus:outline-none">
+        &#9776;
+      </button>
+    </div>
+
+    <!-- Mobile Overlay Menu -->
+    <div id="mobile-overlay" class="sm:hidden fixed inset-0 z-50 hidden">
+      <div class="flex h-full w-full">
+        <!-- Sidebar Menu -->
+        <div id="mobileMenu" class="w-[70%] bg-blue-600 text-white p-6 relative transform translate-x-full transition-transform duration-500 ease-in-out">
+          <!-- Close Button -->
+          <button id="menu-close" class="absolute top-4 right-4 text-white text-3xl">
+            &times;
+          </button>
+
+          <!-- Mobile Nav Links -->
+          <ul class="mt-12 space-y-6 uppercase text-sm font-semibold">
+            <li><a href="./index.html" class="hover:text-green-300">Home</a></li>
+            <li><a href="./about.html" class="hover:text-green-300">About</a></li>
+            <li><a href="./portfolio.html" class="hover:text-green-300">Projects</a></li>
+            <li><a href="https://siscontact.vercel.app/" class="hover:text-green-300">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Transparent Backdrop -->
+        <div id="menu-backdrop" class="w-[30%] bg-gray-400 bg-opacity-30" role="button"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Image -->
+  <section class="w-full h-screen bg-cover bg-center relative" style="background-image: url('./Components/Mathseth/Akpafu\ \(1\).jpg');">
+    <div class="absolute inset-0 bg-blue-500 bg-opacity-50 flex items-center justify-center">
+      <h2 class="text-4xl text-white font-bold">Donation of Exam Materials</h2>
+    </div>
+  </section>
+
+  <!-- Project Overview -->
+  <section class="py-12 px-6 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h3 class="text-2xl font-bold text-blue-500 mb-4">Project Overview</h3>
+      <p class="text-lg leading-relaxed text-gray-700 mb-6">
+       Sis3aCARE successfully donated examination materials to Lolobi Ashiambi LA JHS, Akpafu Todzi JHS, Santrokofi Gbodome and Likpe koforidua JHS to support students in preparing for their assessments. The initiative provided mathematical sets, pens, and rulers, helping to create a more conducive environment for learning and examinations.
+This project aims to boost student performance and confidence by ensuring they have the essential tools needed for success. The effort was made possible through the generosity of Mr. Francis Numor and the collaboration of the school administration, whose commitment to education made this achievement possible.
+Through this initiative, Sis3aCARE continues to empower students and foster equal opportunities for academic growth and a brighter future.
+      </p>
+
+      <ul class="space-y-2 text-gray-600 text-base list-disc list-inside">
+        <li><strong>Start Date:</strong>30th May 2025</li>
+        <li><strong>Target Completion:</strong> 30th May 2025</li>
+        <li><strong>Communities Covered:</strong> 4</li>
+        <li><strong>Estimated Reach:</strong> 100+ students</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="py-12 bg-gray-50">
+ <div class="container slide-in mt-20">
+    <div class="heading">
+      <h3 class="text-gray-400">Project <span>Gallery</span></h3>
+    </div>
+
+    <!-- Photo Gallery -->
+    <div class="box grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="dream">
+        <img src="./Components/Mathseth/likpe (1).jpg" alt="Image 1" class="gallery-img">
+        <img src="./Components/Mathseth/lolobi (2).jpg" alt="Image 2" class="gallery-img">
+        <img src="./Components/Mathseth/lolobi (3).jpg" alt="Image 3" class="gallery-img">
+      </div>
+      <div class="dream">
+        <img src="./Components/Mathseth/lolobi (4).jpg" alt="Image 4" class="gallery-img">
+        <img src="./Components/Mathseth/Akpafu (1).jpg" alt="Image 5" class="gallery-img">
+        <img src="./Components/Mathseth/Akpafu (2).jpg" alt="Image 6" class="gallery-img">
+      </div>
+      <div class="dream">
+        <img src="./Components/Mathseth/Akpafu (3).jpg" alt="Image 7" class="gallery-img">
+        <img src="./Components/Mathseth/Akpafu (4).jpg" alt="Image 8" class="gallery-img">
+        <img src="./Components/Mathseth/Akpafu (4).jpg" alt="Image 9" class="gallery-img">
+      </div>
+
+      <div class="dream">
+        <img src="./Components/Mathseth/Akpafu (5).jpg" alt="Image 10" class="gallery-img">
+        <img src="./Components/Mathseth/likpe (1).jpg" alt="Image 11" class="gallery-img">
+        <img src="./Components/Mathseth/likpe (2).jpg" alt="Image 12" class="gallery-img">
+        <img src="./Components/Mathseth/sankrofi (6).jpg" alt="Image 21" class="gallery-img">
+      </div>
+
+      <div class="dream">
+        <img src="./Components/Mathseth/likpe (3).jpg" alt="Image 13" class="gallery-img">
+        <img src="./Components/Mathseth/likpe (4).jpg" alt="Image 14" class="gallery-img">
+        <img src="./Components/Mathseth/likpe (5).jpg" alt="Image 15" class="gallery-img">
+         <img src="./Components/Mathseth/sankrofi (4).jpg" alt="Image 19" class="gallery-img">
+      </div>
+
+      <div class="dream">
+        <img src="./Components/Mathseth/sankrofi (1).jpg" alt="Image 16" class="gallery-img">
+        <img src="./Components/Mathseth/sankrofi (2).jpg" alt="Image 17" class="gallery-img">
+        <img src="./Components/Mathseth/sankrofi (3).jpg" alt="Image 18" class="gallery-img">
+        <img src="./Components/Mathseth/sankrofi (5).jpg" alt="Image 20" class="gallery-img">
+      </div>
+
+      <div class="dream">
+        <img src="./Components/Mathseth/sankrofi (7).jpg" alt="Image 20" class="gallery-img">
+      </div>
+
+
+    </div>
+    
+
+    <div class="btn">
+      <a href="#">More</a>
+    </div>
+  </div>
+
+  <!-- Modal for full-screen image -->
+  <div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="fullImage">
+    <button class="prev">&lt;</button>
+    <button class="next">&gt;</button>
+  </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="bg-blue-700 text-white py-16 text-center">
+    <h3 class="text-3xl font-bold mb-4">Support This Project</h3>
+    <p class="text-lg mb-6">Your donation helps us provide essential learning materials and resources for underprivileged students.</p>
+    <a href="./payments.html" class="bg-white text-green-700 px-6 py-3 rounded-full font-semibold shadow hover:bg-gray-200 transition">
+      Donate Now
+    </a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-800 text-white py-6 text-center">
+    <p>&copy; 2024 SƐSIACARE. All rights reserved.</p>
+  </footer>
+
+    <!-- Modal for full-screen image -->
+  <div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="fullImage">
+    <button class="prev">&lt;</button>
+    <button class="next">&gt;</button>
+  </div>
+
+  <!-- JS for Mobile Nav -->
+  <script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const menuClose = document.getElementById("menu-close");
+    const mobileOverlay = document.getElementById("mobile-overlay");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const menuBackdrop = document.getElementById("menu-backdrop");
+
+    menuToggle.addEventListener("click", () => {
+      mobileOverlay.classList.remove("hidden");
+      setTimeout(() => {
+        mobileMenu.classList.remove("translate-x-full");
+      }, 10);
+    });
+
+    function closeMobileMenu() {
+      mobileMenu.classList.add("translate-x-full");
+      setTimeout(() => {
+        mobileOverlay.classList.add("hidden");
+      }, 400);
+    }
+
+    menuClose.addEventListener("click", closeMobileMenu);
+    menuBackdrop.addEventListener("click", closeMobileMenu);
+  </script>
+
+<script>
+  const modal = document.getElementById("imageModal");
+  const fullImage = document.getElementById("fullImage");
+  const closeBtn = document.querySelector(".close");
+  const prevBtn = document.querySelector(".prev");
+  const nextBtn = document.querySelector(".next");
+  const galleryImages = document.querySelectorAll(".gallery-img");
+
+  let currentIndex = 0;
+
+  // Open modal and display clicked image
+  galleryImages.forEach((img, index) => {
+    img.addEventListener("click", () => {
+      modal.style.display = "flex"; // Use flex for centering
+      fullImage.src = img.src;
+      currentIndex = index;
+    });
+  });
+
+  // Close modal
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  // Close modal when clicking outside the image
+  window.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+
+  // Navigate to the previous image
+  prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+    fullImage.src = galleryImages[currentIndex].src;
+  });
+
+  // Navigate to the next image
+  nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % galleryImages.length;
+    fullImage.src = galleryImages[currentIndex].src;
+  });
+</script>
+
+
+</body>
+
+</html>
