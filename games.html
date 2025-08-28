@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GALAGAMES</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" type="text/css" href="styleg.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <style>
+    /* Smooth scrolling effect */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Button styling */
+    .btn {
+        padding: 12px 20px;
+        font-size: 18px;
+        background-color: blue;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+
+    .btn:hover {
+        background-color: darkblue;
+    }
+</style>
+
+  
+  <style>
+
+    /* Initial state: Slide in from the bottom */
+.slide-in-bottom {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 0.8s ease-in-out;
+}
+
+/* Active state: Slides into place */
+.slide-in-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+  </style>
+  
+  <style>
+    /* Initial state before sliding in */
+  .slide-in-left {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 0.8s ease-in-out;
+  }
+  
+  .slide-in-right {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 0.8s ease-in-out;
+  }
+  
+  /* Active state when in view */
+  .slide-in-active {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  </style>
+
+  <style>
+    /* Slider Container */
+    .slider {
+      position: relative;
+      width: 100%;
+      max-width: 1000px;
+      height: 400px;
+      margin: auto;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Slider Images */
+    .slides img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+
+    /* Show first image by default */
+    .slides img.active {
+      display: block;
+    }
+  </style>
+ 
+ <style>
+    .underline-custom {
+        position: relative;
+        display: inline-block;
+        padding-bottom: 5px; /* Adjust padding to position underline */
+    }
+    
+    .underline-custom::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 4px; /* Adjust underline thickness */
+        background: linear-gradient(to right, #FFD700, #FF8C00); /* Gradient colors */
+        border-radius: 2px; /* Smooth edges */
+        transform: scaleX(0); /* Start with no underline */
+        transform-origin: right;
+        transition: transform 0.4s ease;
+    }
+    
+    .underline-custom:hover::after {
+        transform: scaleX(1); /* Full underline on hover */
+        transform-origin: left;
+    }
+    </style>
+    
+
+  <style>
+    /* Your in-page CSS */
+    .playwrite-au-vic-guides-regular {
+        font-family: "Playwrite AU VIC Guides", serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+</style>
+
+<style>
+.unlock-regular {
+font-family: "Unlock", serif;
+font-weight: 400;
+font-style: normal;
+}
+</style>
+
+  <style>
+    /* Slide In */
+    .slide-in {
+        animation: slideIn 1.5s ease-out forwards;
+    }
+    @keyframes slideIn {
+        from {
+            transform: translateY(-50px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    /* Slide Out */
+    .slide-out {
+        animation: slideOut 1.5s ease-in forwards;
+    }
+    @keyframes slideOut {
+        from {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        to {
+            transform: translateY(-50px);
+            opacity: 0;
+        }
+    }
+</style>
+
+      
+  <style>
+
+      /* Animations */
+      .fade-in {
+          animation: fadeIn 2s ease-in-out;
+      }
+      @keyframes fadeIn {
+          from {
+              opacity: 0;
+          }
+          to {
+              opacity: 1;
+          }
+      }
+
+      .slide-in {
+          animation: slideIn 1.5s ease-out;
+      }
+      @keyframes slideIn {
+          from {
+              transform: translateY(-50px);
+              opacity: 0;
+          }
+          to {
+              transform: translateY(0);
+              opacity: 1;
+          }
+      }
+
+      .pulse {
+          animation: pulse 2s infinite;
+      }
+      @keyframes pulse {
+          0%, 100% {
+              transform: scale(1);
+          }
+          50% {
+              transform: scale(1.1);
+          }
+      }
+  </style>
+
+<style>
+  /* Custom styles for carousel navigation */
+  .carousel-button {
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+  }
+  .carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+</style>
+
+
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+defer
+></script>
+
+  <style>
+  /* Slider Container */
+  .slider {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    height: 400px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Slider Images */
+  .slides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+  }
+
+  /* Show first image by default */
+  .slides img.active {
+    display: block;
+  }
+</style>
+
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Navbar -->
+  <header class="bg-white shadow fixed w-full top-0 left-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+     <!-- Logo -->
+<a href="./index.html" class="flex items-center">
+  <img src="./Components/SesiaLOGO-modified.png" alt="Siseacare Logo" class="h-12 w-auto">
+</a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden sm:flex space-x-6">
+        <a href="./index.html" class="text-gray-700 hover:text-blue-600">Home</a>
+        <a href="./about.html" class="text-gray-700 hover:text-blue-600">About</a>
+        <a href="./portfolio.html" class="text-gray-700 hover:text-blue-600">Projects</a>
+        <a href="https://siscontact.vercel.app/" class="text-gray-700 hover:text-blue-600">Contact Us</a>
+      </nav>
+
+      <!-- Hamburger Button -->
+      <button id="menu-toggle" class="sm:hidden text-3xl text-gray-800 focus:outline-none">
+        &#9776;
+      </button>
+    </div>
+
+    <!-- Mobile Overlay Menu -->
+    <div id="mobile-overlay" class="sm:hidden fixed inset-0 z-50 hidden">
+      <div class="flex h-full w-full">
+        <!-- Sidebar Menu -->
+        <div id="mobileMenu" class="w-[70%] bg-blue-600 text-white p-6 relative transform translate-x-full transition-transform duration-500 ease-in-out">
+          <!-- Close Button -->
+          <button id="menu-close" class="absolute top-4 right-4 text-white text-3xl">
+            &times;
+          </button>
+
+          <!-- Mobile Nav Links -->
+          <ul class="mt-12 space-y-6 uppercase text-sm font-semibold">
+            <li><a href="./index.html" class="hover:text-green-300">Home</a></li>
+            <li><a href="./about.html" class="hover:text-green-300">About</a></li>
+            <li><a href="./portfolio.html" class="hover:text-green-300">Projects</a></li>
+            <li><a href="https://siscontact.vercel.app/" class="hover:text-green-300">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Transparent Backdrop -->
+        <div id="menu-backdrop" class="w-[30%] bg-gray-400 bg-opacity-30" role="button"></div>
+      </div>
+    </div>
+  </header>
+
+   <!-- Hero Image -->
+  <section class="w-full h-screen bg-cover bg-center relative" 
+  style="background-image: url('./Components/highlights/football\ \(5\).JPG');">
+  
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black-500 bg-opacity-50 flex items-center justify-center">
+    <h2 class="text-5xl text-white font-bold text-center sm:text-left px-4">
+      Community Engagement–Football Gala
+    </h2>
+  </div>
+</section>
+
+
+  <!-- Project Overview -->
+  <section class="py-12 px-6 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h3 class="text-2xl font-bold text-blue-500 mb-4">Project Overview</h3>
+      <p class="text-lg leading-relaxed text-gray-700 mb-6">
+       Sis3aCARE successfully hosted a two-day Community Football Gala at Lolobi Ashiambi to promote unity, teamwork, and youth development among neighboring communities. The event featured teams from Lolobi Ashiambi, Lolobi Kumasi, and New Baika, engaging young people through sports while encouraging healthy lifestyles and positive social interaction. The program aimed to strengthen community bonds, discover local talent, and provide a recreational outlet for the youth. The Football Gala successfully brought together over three communities, reinforcing Sis3aCARE’s mission to empower and connect communities through impactful programs.
+
+      <ul class="space-y-2 text-gray-600 text-base list-disc list-inside">
+        <li><strong>Start Date:</strong> 2nd January 2025</li>
+        <li><strong>Target Completion:</strong> 2nd January 2025</li>
+        <li><strong>Communities Covered:</strong> 1</li>
+        <li><strong>Estimated Reach:</strong> Lolobi Ashiambi Community</li>
+      </ul>
+    </div>
+  </section>
+
+  
+ <!-- Gallery Section -->
+  <section class="py-12 bg-gray-50">
+ <div class="container mx-auto px-4 slide-in mt-20">
+    <div class="heading">
+      <h3 class="text-gray-400">Project <span>Gallery</span></h3>
+    </div>
+
+    <!-- Photo Gallery -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<img src="./Components/pictures/siseafam.JPG" alt="Image 1" class="gallery-img w-full h-64 object-cover rounded-lg shadow-md cursor-pointer">
+<img src="./Components/pictures/logologo.JPG" alt="Image 2" class="gallery-img w-full h-64 object-cover rounded-lg shadow-md cursor-pointer">
+<img src="./Components/pictures/crowd.JPG" alt="Image 3" class="gallery-img w-full h-64 object-cover rounded-lg shadow-md cursor-pointer">
+<img src="./Components/pictures/sompik.JPG" alt="Image 4" class="gallery-img w-full h-64 object-cover rounded-lg shadow-md cursor-pointer">
+
+<img src="./Components/highlights/footselect (1).JPG" alt="Image 5" class="gallery-img w-full h-64 object-cover rounded-lg shadow-md cursor-pointer">
+<img src="./Components/highlights/footselect (2).JPG" alt="Image 6" class="gallery-img w-full h-64 object-cover rounded-lg shadow-md cursor-pointer">
+<img src="./Components/highlights/footselect (4).JPG" alt="Image 7" class="gallery-img w-full h-64 object-cover rounded-lg shadow-md cursor-pointer">
+<img src="./Components/highlights/footselect (5).JPG" alt="Image 8" class="gallery-img w-full h-64 object-cover rounded-lg shadow-md cursor-pointer">
+<img src="./Components/highlights/footselect (6).JPG" alt="Image 9" class="gallery-img w-full h-64 object-cover rounded-lg shadow-md cursor-pointer">
+<img src="./Components/highlights/footselect (8).JPG" alt="Image 10" class="gallery-img w-full h-64 object-cover rounded-lg shadow-md cursor-pointer">
+<img src="./Components/highlights/footselect (9).JPG" alt="Image 11" class="gallery-img w-full h-64 object-cover rounded-lg shadow-md cursor-pointer">
+
+<img src="./Components/highlights/football (10).JPG" alt="Image 12" class="gallery-img w-full h-64 object-cover rounded-lg shadow-md cursor-pointer">
+<img src="./Components/highlights/football (10).JPG" alt="Image 13" class="gallery-img w-full h-64 object-cover rounded-lg shadow-md cursor-pointer">
+<img src="./Components/highlights/football (11).JPG" alt="Image 14" class="gallery-img w-full h-64 object-cover rounded-lg shadow-md cursor-pointer">
+<img src="./Components/highlights/football (12).JPG" alt="Image 15" class="gallery-img w-full h-64 object-cover rounded-lg shadow-md cursor-pointer">
+<img src="./Components/highlights/football (13).JPG" alt="Image 16" class="gallery-img w-full h-64 object-cover rounded-lg shadow-md cursor-pointer">
+<img src="./Components/highlights/football (14).JPG" alt="Image 17" class="gallery-img w-full h-64 object-cover rounded-lg shadow-md cursor-pointer">
+<img src="./Components/highlights/football (15).JPG" alt="Image 18" class="gallery-img w-full h-64 object-cover rounded-lg shadow-md cursor-pointer">
+<img src="./Components/highlights/football (16).JPG" alt="Image 19" class="gallery-img w-full h-64 object-cover rounded-lg shadow-md cursor-pointer">
+<img src="./Components/highlights/football (17).JPG" alt="Image 20" class="gallery-img w-full h-64 object-cover rounded-lg shadow-md cursor-pointer">
+<img src="./Components/highlights/football (18).JPG" alt="Image 21" class="gallery-img w-full h-64 object-cover rounded-lg shadow-md cursor-pointer">
+<img src="./Components/highlights/football (19).JPG" alt="Image 22" class="gallery-img w-full h-64 object-cover rounded-lg shadow-md cursor-pointer">
+<img src="./Components/highlights/football (20).JPG" alt="Image 23" class="gallery-img w-full h-64 object-cover rounded-lg shadow-md cursor-pointer">
+<img src="./Components/highlights/football (21).JPG" alt="Image 24" class="gallery-img w-full h-64 object-cover rounded-lg shadow-md cursor-pointer">
+<img src="./Components/highlights/football (22).JPG" alt="Image 25" class="gallery-img w-full h-64 object-cover rounded-lg shadow-md cursor-pointer">
+<img src="./Components/highlights/football (23).JPG" alt="Image 26" class="gallery-img w-full h-64 object-cover rounded-lg shadow-md cursor-pointer">
+<img src="./Components/highlights/football (26).JPG" alt="Image 27" class="gallery-img w-full h-64 object-cover rounded-lg shadow-md cursor-pointer">
+<img src="./Components/highlights/football (28).JPG" alt="Image 28" class="gallery-img w-full h-64 object-cover rounded-lg shadow-md cursor-pointer">
+<img src="./Components/highlights/football (29).JPG" alt="Image 29" class="gallery-img w-full h-64 object-cover rounded-lg shadow-md cursor-pointer">
+<img src="./Components/highlights/football (3).JPG" alt="Image 30" class="gallery-img w-full h-64 object-cover rounded-lg shadow-md cursor-pointer">
+<img src="./Components/highlights/football (30).JPG" alt="Image 31" class="gallery-img w-full h-64 object-cover rounded-lg shadow-md cursor-pointer">
+<img src="./Components/highlights/football (4).JPG" alt="Image 32" class="gallery-img w-full h-64 object-cover rounded-lg shadow-md cursor-pointer">
+<img src="./Components/highlights/football (5).JPG" alt="Image 33" class="gallery-img w-full h-64 object-cover rounded-lg shadow-md cursor-pointer">
+<img src="./Components/highlights/football (6).JPG" alt="Image 34" class="gallery-img w-full h-64 object-cover rounded-lg shadow-md cursor-pointer">
+<img src="./Components/highlights/football (8).JPG" alt="Image 35" class="gallery-img w-full h-64 object-cover rounded-lg shadow-md cursor-pointer">
+<img src="./Components/highlights/football (9).JPG" alt="Image 36" class="gallery-img w-full h-64 object-cover rounded-lg shadow-md cursor-pointer">
+
+    </div>
+
+    <div class="text-center mt-8">
+      <a href="#" class="bg-black text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-700">More</a>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="fullImage">
+    <button class="prev">&lt;</button>
+    <button class="next">&gt;</button>
+  </div>
+</section>
+
+<!-- Match Highlights Toggle Section -->
+<section class="py-8 bg-gray-50">
+  <div class="container mx-auto px-6 text-center">
+    <!-- Toggle Button -->
+    <button id="toggleHighlights" 
+      class="bg-blue-600 text-white px-6 py-3 rounded-full font-semibold shadow hover:bg-blue-700 transition">
+      Want to see the highlights?
+    </button>
+
+    <!-- Highlights Content (Hidden by default) -->
+    <div id="highlightsContent" 
+      class="mt-8 max-h-0 overflow-hidden transition-all duration-700 ease-in-out">
+
+
+    <!-- Header Section -->
+  <header class="bg-blue-600 text-white py-6">
+    <div class="container mx-auto text-center">
+      <h1 class="text-3xl font-bold">Match Highlights</h1>
+      <p class="text-lg">A recap of the thrilling game and key moments</p>
+    </div>
+  </header>
+
+
+  <!-- Highlights Overview -->
+  <section class="py-8">
+    <div class="container mx-auto px-6">
+      <h2 class="text-2xl font-bold mb-4">Game Overview</h2>
+      <p class="text-gray-700 mb-6">
+      <p class="text-gray-700 mb-6"> Lolobi Kumasi Wins Thrilling Gala Game Against New Baika</p>
+The highly anticipated gala game between Lolobi Ashiambi , Lolobi Kumasi and New Baika took place on Thursday 2nd January 2025 at Lolobi Ashiambi Football park, with Lolobi Kumasi emerging victorious with a 4 points and a goal win. The game was attended by over 1,000 fans, who were treated to an exciting display of skill and determination from both teams.
+The game got off to a strong start, with Lolobi Ashiambi scoring one goals in the first half. However, Lolobi Kumasi fought back in the second half, scoring two goals of their own to win  the game. In the end, it was Lolobi Kumasi who emerged victorious, scoring the winning goal in the final minutes of the game. The 2-1 scores gave Kumasi 3 points with one goal leaving Ashiambi with 0 points and no goal.
+Ashiambi now faced New Baika where it all ended in a zero draw in full time. Baika then secured a one point and Ashiambi one point.
+Lolobi Kumasi and Baika now went for the finals where they played draw and secured Kumasi the lead on the table with 4 points and a goal leaving Baika with 2 points and no goal.
+"We are thrilled with the win," said Lolobi Kumasi's coach Iddah Savior. "Our players showed a lot of heart and determination, and we are proud of their performance."
+The gala game was a huge success, with many fans in attendance and a lively atmosphere throughout the day. The event also raised money for a local sellers.
+</p>
+    </div>
+  </section>
+
+  <div class="slider">
+    <div class="slides">
+      <img src="./Components/pictures/siseafam.JPG" class="active" alt="Slide 1">
+      <img src="./Components/pictures/logologo.JPG" alt="Slide 2">
+      <img src="./Components/pictures/crowd.JPG" alt="Slide 3">
+      <img src="./Components/pictures/sompik.JPG" alt="Slide 4">
+      <img src="./Components/highlights/footselect (1).JPG" alt="Slide 5">
+      <img src="./Components/highlights/footselect (2).JPG" alt="Slide 6">
+      <img src="./Components/highlights/footselect (4).JPG" alt="Slide 7">
+      <img src="./Components/highlights/footselect (5).JPG" alt="Slide 8">
+      <img src="./Components/highlights/footselect (6).JPG" alt="Slide 9">
+      <img src="./Components/highlights/footselect (8).JPG" alt="Slide 10">
+      <img src="./Components/highlights/footselect (9).JPG" alt="Slide 11">
+      <img src="./Components/highlights/football (10).JPG" alt="Slide 12">
+      <img src="./Components/highlights/football (10).JPG" alt="Slide 14">
+      <img src="./Components/highlights/football (11).JPG" alt="Slide 15">
+      <img src="./Components/highlights/football (12).JPG" alt="Slide 16">
+      <img src="./Components/highlights/football (13).JPG" alt="Slide 17">
+      <img src="./Components/highlights/football (14).JPG" alt="Slide 18">
+      <img src="./Components/highlights/football (15).JPG" alt="Slide 19">
+      <img src="./Components/highlights/football (16).JPG" alt="Slide 20">
+      <img src="./Components/highlights/football (17).JPG" alt="Slide 21">
+      <img src="./Components/highlights/football (18).JPG" alt="Slide 22">
+      <img src="./Components/highlights/football (19).JPG" alt="Slide 23">
+      <img src="./Components/highlights/football (20).JPG" alt="Slide 24">
+      <img src="./Components/highlights/football (21).JPG" alt="Slide 25">
+      <img src="./Components/highlights/football (22).JPG" alt="Slide 26">
+      <img src="./Components/highlights/football (23).JPG" alt="Slide 27">
+      <img src="./Components/highlights/football (26).JPG" alt="Slide 28">
+      <img src="./Components/highlights/football (28).JPG" alt="Slide 29">
+      <img src="./Components/highlights/football (29).JPG" alt="Slide 30">
+      <img src="./Components/highlights/football (3).JPG" alt="Slide 31">
+      <img src="./Components/highlights/football (30).JPG" alt="Slide 32">
+      <img src="./Components/highlights/football (4).JPG" alt="Slide 33">
+      <img src="./Components/highlights/football (5).JPG" alt="Slide 34">
+      <img src="./Components/highlights/football (6).JPG" alt="Slide 35">
+      <img src="./Components/highlights/football (8).JPG" alt="Slide 36">
+      <img src="./Components/highlights/football (9).JPG" alt="Slide 37">
+     
+    </div>
+  </div>
+ 
+
+  <!-- Picture Highlights Section -->
+  <section class="py-8 bg-white">
+    <div class="container mx-auto px-6">
+      <h2 class="text-2xl font-bold mb-4">Key Moments</h2>
+      
+      <!-- Highlight Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Highlight 1 -->
+        <div class="bg-gray-200 rounded-lg overflow-hidden shadow-md">
+          <img src="./Components/footselect (7).JPG" alt="Goal Celebration" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="font-bold text-lg">Opening Remarks</h3>
+            <p class="text-gray-600">. Players listening to opening remarks </p>
+          </div>
+        </div>
+
+        <!-- Highlight 2 -->
+        <div class="bg-gray-200 rounded-lg overflow-hidden shadow-md">
+          <img src="./Components/football (2).JPG" alt="Penalty Save" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="font-bold text-lg">Match Officiators</h3>
+            <p class="text-gray-600">Dedicated match officials ensuring fair play and smooth coordination throughout the football gala.</p>
+          </div>
+        </div>
+
+        <!-- Highlight 3 -->
+        <div class="bg-gray-200 rounded-lg overflow-hidden shadow-md">
+          <img src="./Components/football (24).JPG" alt="Winning Goal" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="font-bold text-lg">Captains’ Briefing</h3>
+            <p class="text-gray-600">Team captains and officiators engage in a pre-match discussion to set the tone for fair play and sportsmanship</p>
+          </div>
+        </div>
+
+        <!-- Highlight 4 -->
+        <div class="bg-gray-200 rounded-lg overflow-hidden shadow-md">
+          <img src="./Components/football (27).JPG" alt="Team Celebration" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="font-bold text-lg">Champions’ Celebration</h3>
+            <p class="text-gray-600">Lolobi Kumasi Rock FC jubilating after successfully winning the trophy </p>
+          </div>
+        </div>
+
+        <!-- Highlight 5 -->
+        <div class="bg-gray-200 rounded-lg overflow-hidden shadow-md">
+          <img src="./Components/fanexc.JPG" alt="Fan Excitement" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="font-bold text-lg">Coach’s Triumph</h3>
+            <p class="text-gray-600">Lolobi Kumasi Rock FC coach Savior Nathaniel Iddah so excited for been the first manager to win Sisea care football gala</p>
+          </div>
+        </div>
+
+        <!-- Highlight 6 -->
+        <div class="bg-gray-200 rounded-lg overflow-hidden shadow-md">
+          <img src="./Components/footballtry.JPG" alt="Trophy Presentation" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="font-bold text-lg">Trophy Presentation</h3>
+            <p class="text-gray-600"> Sisea care Director Mr Agbewu Clement Lifelot presenting the trophy to Lolobi Kumasi Rock FC.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div>
+  </div>
+</section>
+  <!--slides script-->
+<script>
+  const slides = document.querySelectorAll(".slides img");
+  let slideIndex = 0;
+
+  function showNextSlide() {
+    slides[slideIndex].classList.remove("active");
+    slideIndex = (slideIndex + 1) % slides.length;
+    slides[slideIndex].classList.add("active");
+  }
+
+  // Change image every 2 seconds (2000ms)
+  setInterval(showNextSlide, 5000);
+</script>
+
+
+  <!-- Call to Action -->
+  <section class="bg-blue-700 text-white py-16 text-center">
+    <h3 class="text-3xl font-bold mb-4">Support Us</h3>
+    <p class="text-lg mb-6">Your donation helps us provide essential learning materials and resources for underprivileged students.</p>
+    <a href="./payments.html" class="bg-white text-blue-700 px-6 py-3 rounded-full font-semibold shadow hover:bg-gray-200 transition">
+      Donate Now
+    </a>
+  </section>
+
+    <!-- Footer -->
+  <footer class="bg-blue-800 text-white py-6 text-center">
+    <p>&copy; 2024 SƐSIACARE. All rights reserved.</p>
+  </footer>
+
+
+  <!-- JS for Mobile Nav -->
+  <script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const menuClose = document.getElementById("menu-close");
+    const mobileOverlay = document.getElementById("mobile-overlay");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const menuBackdrop = document.getElementById("menu-backdrop");
+
+    menuToggle.addEventListener("click", () => {
+      mobileOverlay.classList.remove("hidden");
+      setTimeout(() => {
+        mobileMenu.classList.remove("translate-x-full");
+      }, 10);
+    });
+
+    function closeMobileMenu() {
+      mobileMenu.classList.add("translate-x-full");
+      setTimeout(() => {
+        mobileOverlay.classList.add("hidden");
+      }, 400);
+    }
+
+    menuClose.addEventListener("click", closeMobileMenu);
+    menuBackdrop.addEventListener("click", closeMobileMenu);
+  </script>
+
+<!-- Modal Script -->
+<script>
+  const modal = document.getElementById("imageModal");
+  const fullImage = document.getElementById("fullImage");
+  const closeBtn = document.querySelector(".close");
+  const prevBtn = document.querySelector(".prev");
+  const nextBtn = document.querySelector(".next");
+  const galleryImages = document.querySelectorAll(".gallery-img");
+
+  let currentIndex = 0;
+
+  // Open modal and display clicked image
+  galleryImages.forEach((img, index) => {
+    img.addEventListener("click", () => {
+      modal.style.display = "flex"; // flex for centering
+      fullImage.src = img.src;
+      currentIndex = index;
+    });
+  });
+
+  // Close modal
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  // Close modal when clicking outside image
+  window.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+
+  // Prev
+  prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+    fullImage.src = galleryImages[currentIndex].src;
+  });
+
+  // Next
+  nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % galleryImages.length;
+    fullImage.src = galleryImages[currentIndex].src;
+  });
+</script>
+
+<!-- JS for Toggle -->
+<script>
+  const toggleBtn = document.getElementById("toggleHighlights");
+  const highlights = document.getElementById("highlightsContent");
+  let isOpen = false;
+
+  toggleBtn.addEventListener("click", () => {
+    if (!isOpen) {
+      highlights.classList.remove("max-h-0");
+      highlights.classList.add("max-h-[3000px]"); // enough height for rollout
+      toggleBtn.textContent = "Hide Highlights";
+    } else {
+      highlights.classList.remove("max-h-[3000px]");
+      highlights.classList.add("max-h-0");
+      toggleBtn.textContent = "Want to see the highlights?";
+    }
+    isOpen = !isOpen;
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+      const slideElements = document.querySelectorAll(".slide-in, .slide-out");
+
+      const observer = new IntersectionObserver(
+          (entries) => {
+              entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                      entry.target.classList.add("slide-in");
+                      entry.target.classList.remove("slide-out");
+                  } else {
+                      entry.target.classList.remove("slide-in");
+                      entry.target.classList.add("slide-out");
+                  }
+              });
+          },
+          { threshold: 0.1 } // Trigger animation when 10% of the element is visible
+      );
+
+      slideElements.forEach((el) => observer.observe(el));
+  });
+</script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const slideInElements = document.querySelectorAll('.slide-in-left, .slide-in-right');
+  
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('slide-in-active');
+        } else {
+          entry.target.classList.remove('slide-in-active'); // Remove when scrolling out
+        }
+      });
+    }, { threshold: 0.2 });
+  
+    slideInElements.forEach(el => observer.observe(el));
+  });
+  
+  </script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const slideInElements = document.querySelectorAll('.slide-in-bottom');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('slide-in-active');
+      } else {
+        entry.target.classList.remove('slide-in-active'); // Remove on scroll out
+      }
+    });
+  }, { threshold: 0.2 });
+
+  slideInElements.forEach(el => observer.observe(el));
+});
+</script>
+
+</body>
+
+</html>
